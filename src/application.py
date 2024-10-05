@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
 import random
-import numpy as np
 
 app = Flask(__name__)
 
@@ -61,7 +60,7 @@ def game():
 
     if len(questions_left) == 0:
         # Return the most probable character
-        result = sorted(probabilities, key=lambda p: p['probability'], reverse=True)[0]
+        result = probabilities[0]
         return render_template('game.html', result=result['name'])
     else:
         # Ask another question
@@ -115,37 +114,30 @@ def story6():
 def calculate_probabilities(questions_so_far, answers_so_far):
     probabilities = []
     for character in characters:
+        similarity_score = calculate_similarity_score(character, questions_so_far, answers_so_far)
         probabilities.append({
             'name': character['name'],
-            'probability': calculate_character_probability(character, questions_so_far, answers_so_far)
+            'probability': similarity_score
         })
+    
+    # Sort characters by similarity score (higher score means more similar)
+    probabilities = sorted(probabilities, key=lambda x: x['probability'], reverse=True)
     return probabilities
 
-# Calculate probability for a single character based on answers
-def calculate_character_probability(character, questions_so_far, answers_so_far):
-    P_character = 1 / len(characters)
-    log_P_answers_given_character = 0
-    log_P_answers_given_not_character = 0
-
+# Calculate similarity score for a single character based on answers
+def calculate_similarity_score(character, questions_so_far, answers_so_far):
+    score = 0
     for question, answer in zip(questions_so_far, answers_so_far):
-        log_P_answers_given_character += np.log(1 - abs(answer - character_answer(character, question)))
-        P_answer_not_character = np.mean([1 - abs(answer - character_answer(not_character, question))
-                                          for not_character in characters if not_character['name'] != character['name']])
-        log_P_answers_given_not_character += np.log(P_answer_not_character)
-
-    log_P_answers = np.logaddexp(
-        np.log(P_character) + log_P_answers_given_character,
-        np.log(1 - P_character) + log_P_answers_given_not_character
-    )
-
-    log_P_character_given_answers = log_P_answers_given_character + np.log(P_character) - log_P_answers
-    return np.exp(log_P_character_given_answers)
+        character_answer_value = character_answer(character, question)
+        # Calculate similarity as inverse of the absolute difference
+        score += 1 - abs(answer - character_answer_value)
+    return score
 
 # Helper function to get a character's answer to a question
 def character_answer(character, question):
     if question in character['answers']:
         return character['answers'][question]
-    return 0.5
+    return 0.5  # Default neutral answer if no answer exists
 
 if __name__ == '__main__':
     app.run(debug=True)
