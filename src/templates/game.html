@@ -20,13 +20,22 @@
             <!-- Show result if the game is finished -->
             <h2>The AI thinks you're thinking of: <span class="result-character">{{ result }}</span></h2>
             <div class="game-actions">
+<<<<<<< HEAD
                 <a href="{{ url_for('reset') }}" class="btn btn-success submit-btn">Play Again</a>
                 <a href="{{ url_for('index') }}" class="btn quit-btn">Exit</a>
+=======
+                <a href="{{ url_for('reset') }}" class="btn btn-primary">Play Again</a>
+                <a href="{{ url_for('index') }}" class="btn btn-danger">Exit</a>
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
             </div>
         {% else %}
             <!-- Show current question -->
             <h2>{{ question_text }}</h2>
+<<<<<<< HEAD
             <form action="{{ url_for('game') }}" method="get" onsubmit="return validateForm()">
+=======
+            <form action="{{ url_for('game') }}" method="get">
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
                 <input type="hidden" name="question" value="{{ question }}">
                 <div class="options">
                     <label class="radio-option">
@@ -36,13 +45,18 @@
                         <input type="radio" name="answer" value="0"> No
                     </label>
                 </div>
+<<<<<<< HEAD
                 <button type="submit" class="btn submit-btn">Submit Answer</button>
                 <button type="button" class="btn quit-btn" onclick="confirmQuit(this)">Quit</button>
                 <div id="error-message" style="color:red; display:none;">Please select an answer before submitting!</div>
+=======
+                <button type="submit" class="btn btn-success">Submit Answer</button>
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
             </form>
         {% endif %}
     </div>
 </div>
+<<<<<<< HEAD
 
 <script>
     function validateForm() {
@@ -87,3 +101,6 @@
     }
 </script>
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928

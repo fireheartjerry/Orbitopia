@@ -12,6 +12,7 @@ body {
     max-width: 650px;
     margin: 60px auto;
     padding: 30px;
+<<<<<<< HEAD
     background: linear-gradient(135deg, #ff0066 0%, #800080 50%, #003366 100%);
     border-radius: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -25,11 +26,46 @@ body {
 h2, .result-character, label {
     color: #d4a5f5;  /* Soft lavender tone */
     font-family: 'Roboto', sans-serif;
+=======
+    background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        max-width: 90%;
+        margin: 40px auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        max-width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+}
+
+/* Result character styling */
+.result-character {
+    color: #007bff;
+    font-weight: bold;
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
 }
 
 /* Headings */
 h2 {
     font-size: 2.25rem;
+<<<<<<< HEAD
+=======
+    color: #333;
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
     margin-bottom: 25px;
     animation: fadeIn 0.8s ease-in-out;
 }
@@ -48,7 +84,11 @@ form {
 .radio-option {
     margin: 0 20px;
     font-size: 1.5rem;
+<<<<<<< HEAD
     color: #ffffff;
+=======
+    color: #555;
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
     cursor: pointer;
 }
 
@@ -59,17 +99,26 @@ form {
 }
 
 /* Buttons */
+<<<<<<< HEAD
 button[type="submit"], button.quit-btn, a.btn-success, a.quit-btn {
     padding: 12px 25px;
     font-size: 1rem;
     background-color: #842f6d;  /* Default button color */
     color: #d4a5f5;  /* Button text matches the title color */
+=======
+button[type="submit"] {
+    padding: 12px 25px;
+    font-size: 1.25rem;
+    color: #ffffff;
+    background-color: #28a745;
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+<<<<<<< HEAD
 /* Hover effects */
 button[type="submit"]:hover, a.btn-success:hover {
     background-color: #39142f; /* A blue color that complements white text */
@@ -91,6 +140,45 @@ button[type="submit"]:active, button.quit-btn:active, a.btn-success:active, a.qu
 button.quit-btn, a.quit-btn {
     padding: 12px 25px;
     background-color: #842f6d;  /* Reset background color */
+=======
+button[type="submit"]:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+button[type="submit"]:active {
+    background-color: #1e7e34;
+}
+
+/* Link buttons */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+a.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+a.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+a.btn-danger:hover {
+    background-color: #c82333;
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
 }
 
 /* Add responsiveness */
@@ -107,10 +195,22 @@ button.quit-btn, a.quit-btn {
         font-size: 1.3rem;
     }
 
+<<<<<<< HEAD
     button[type="submit"], button.quit-btn, a.btn-success, a.quit-btn {
         font-size: 1.1rem;
         padding: 10px 20px;
     }
+=======
+    button[type="submit"] {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    a {
+        font-size: 1.1rem;
+        padding: 8px 20px;
+    }
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
 }
 
 /* Fade-in animation for smooth appearance */

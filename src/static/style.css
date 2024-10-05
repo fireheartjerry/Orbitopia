@@ -49,6 +49,7 @@ h1 {
     font-size: 5em;
 }
 
+<<<<<<< HEAD
 /* Improved Card Styling */
 .card {
     transition: 
@@ -78,6 +79,37 @@ h1 {
     cursor: pointer;
 }
 
+=======
+/* Space-like Background */
+.bg-space {
+    background-color: #06272c; /* Dark, space-like */
+}
+
+/* Card Styles */
+.card {
+    gap: 20px !important;
+    padding: 20px !important;
+    background: url('/static/cardbg.jpg') no-repeat center center !important;
+    background-size: cover !important;
+    backdrop-filter: blur(10px) saturate(150%) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 1em;
+    transition: transform 0.3s ease !important;
+    opacity: 0.6 !important;
+    border: 2px solid white !important;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Scale and slight rotation for depth */
+    color: white; /* White text on hover */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+    opacity: 1 !important;
+}
+
+
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
 /* Transition for Text Cards */
 .t-card {
     opacity: 0.7;
@@ -118,7 +150,11 @@ h1 {
     z-index: 9999;
     padding: 15px 30px;
     background: linear-gradient(135deg, #00c8ff, #ff00a5);
+<<<<<<< HEAD
     color: white;
+=======
+    color: white !important;
+>>>>>>> 11225722ee513b48365f5c0268a047081aced928
     font-size: 1.2em;
     border: none;
     border-radius: 8px;

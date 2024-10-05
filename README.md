@@ -1,0 +1,3 @@
+NASA Space Apps 2024 Submission
+
+Exoplanets are CONFUSING! They are complex and varied celestial bodies that orbit stars outside our solar system. Additionally, you need to be at least in high school to approach them, making exoplanets inaccessible to elementary and middle school students.  In response to this challenge, we are developing an educational website specifically designed to make the study of exoplanets accessible and engaging for these students. Our platform will feature interactive lessons, colorful visuals, and age-appropriate explanations, allowing young learners to explore the fascinating world of exoplanets in a fun and intuitive way.
