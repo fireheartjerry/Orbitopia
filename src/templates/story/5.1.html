@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="16.66">
+    </div>
+    <div class="story-text">
+        <h1 class="fs-1 lead">Destination 5 - Kepler 452</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card left-card">
+            Kepler-452 is a G-type main-sequence star, located approximately 1,810 light years from Earth in the Cygnus constellation. It shares many similarities with the Sun but has some notable differences as well.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Type:</strong> G-type main-sequence star (similar to the Sun).</li>
+                <li><strong>Mass and Radius:</strong> 104% the mass and 111% the radius of the Sun.</li>
+                <li><strong>Temperature:</strong> 5757 K (slightly cooler than the Sun).</li>
+                <li><strong>Age:</strong> Approximately 6 billion years old (older than the Sun).</li>
+                <li><strong>Metallicity:</strong> Metal-rich with 162% of the Sun's iron content (Fe/H = 0.21).</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Brightness:</strong> 20% brighter than the Sun with a luminosity of 120% of solar luminosity.</li>
+                <li><strong>Apparent Magnitude:</strong> 13.426, making it too dim to be seen with the naked eye.</li>
+                <li><strong>Distance:</strong> 1,810 light years away from Earth.</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Planetary System:</strong> Kepler-452 has one known planet, Kepler-452b, orbiting it.</li>
+                <li><strong>Orbital Period:</strong> Kepler-452b orbits the star in 384.843 days, closely resembling Earth year.</li>
+                <li><strong>Significance:</strong> Kepler-452b is often considered to be a “super-Earth,” making this system a fascinating target for exoplanet research.</li>
+            </ul>
+        </div>
+    </div> <hr>
+    <h1>Interactive 3D Star Model of Kepler 452</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/star/Kepler-452" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/4.2">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/5.2">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

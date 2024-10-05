@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="16.66">
+    </div>
+    <div class="story-text">
+        <h1 class="fs-1 lead">Destination 3 - Kepler 7</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card left-card">
+            Kepler-7 is a star located in the constellation Lyra, and was targeted by NASA's Kepler Mission. It hosts Kepler-7b, a Jupiter-sized gas giant with a density as low as styrofoam.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Type:</strong> Sun-like star (similar to the Sun but larger and more massive).</li>
+                <li><strong>Mass:</strong> 1.347 times the Sun's mass.</li>
+                <li><strong>Radius:</strong> 1.843 times the Sun's radius (84% wider than the Sun).</li>
+                <li><strong>Age:</strong> Estimated to be 3.5 billion years old.</li>
+                <li><strong>Metallicity:</strong> 30% more metal-rich than the Sun ([Fe/H] = 0.11).</li>
+                <li><strong>Temperature:</strong> 5933 K (slightly hotter than the Sun's 5778 K).</li>
+                <li><strong>Apparent Magnitude:</strong> 13 (too dim to be seen with the naked eye).</li>
+                <li><strong>Distance:</strong> Approximately 3,160 light years from the Solar System.</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Planetary System:</strong> Home to Kepler-7b, a Jupiter-sized gas giant with an unusually low density.</li>
+                <li><strong>Discovery:</strong> Kepler-7b was the fourth planet discovered by the Kepler spacecraft.</li>
+                <li><strong>Significance:</strong> Kepler-7b was announced on January 4, 2010, at the 215th meeting of the American Astronomical Society.</li>
+                <li>Kepler-7b's density is extremely low, making it one of the lightest gas giants ever discovered.</li>
+                <li>The discovery was confirmed through observations from observatories in Hawaii, Texas, Arizona, California, and the Canary Islands.</li>
+            </ul>
+        </div>
+    </div> <hr>
+    <h1>Interactive 3D Star Model of Kepler 7</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/star/Kepler-7" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/2.2">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/3.2">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

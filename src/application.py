@@ -98,17 +98,29 @@ def story2_1():
 def story2_2():
     return render_template('story/2.2.html')
 
-@app.route('/story/3')
-def story3():
-    return render_template('story/3.html')
+@app.route('/story/3.1')
+def story3_1():
+    return render_template('story/3.1.html')
 
-@app.route('/story/4')
-def story4():
-    return render_template('story/4.html')
+@app.route('/story/3.2')
+def story3_2():
+    return render_template('story/3.2.html')
 
-@app.route('/story/5')
-def story5():
-    return render_template('story/5.html')
+@app.route('/story/4.1')
+def story4_1():
+    return render_template('story/4.1.html')
+
+@app.route('/story/4.2')
+def story4_2():
+    return render_template('story/4.2.html')
+
+@app.route('/story/5.1')
+def story5_1():
+    return render_template('story/5.1.html')
+
+@app.route('/story/5.2')
+def story5_2():
+    return render_template('story/5.2.html')
 
 @app.route('/story/6')
 def story6():

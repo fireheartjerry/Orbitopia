@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="16.66">
+    </div>
+    <div class="story-text">
+        <h1 class="fs-1 lead">Destination 4 - Kepler 22</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card left-card">
+            Kepler-22 is a Sun-like star located in the northern constellation of Cygnus. It hosts one known planet that lies within its habitable zone, making it a prime candidate for the study of potential life.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Type:</strong> Sun-like G-type main-sequence star (G5V).</li>
+                <li><strong>Apparent Magnitude:</strong> 11.7 (too faint to be seen with the naked eye).</li>
+                <li><strong>Coordinates:</strong> Right Ascension: 19h 16m 52.2s, Declination: +47° 53′ 3.9″.</li>
+                <li><strong>Distance:</strong> Approximately 644 light years (197 parsecs) from Earth.</li>
+                <li><strong>Luminosity:</strong> Radiates 79% of the Sun's luminosity.</li>
+                <li><strong>Temperature:</strong> 5,518 K (slightly cooler than the Sun).</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Rotational Velocity:</strong> 0.6 km/s, indicating a slow rotation.</li>
+                <li><strong>Flare Activity:</strong> No detected flare activity, suggesting stability in its emissions.</li>
+                <li><strong>Spectral Type:</strong> G5V, indicating it is slightly smaller and cooler than the Sun.</li>
+                <li><strong>Habitable Zone:</strong> Hosts one known planet that lies in its habitable zone, potentially allowing liquid water.</li>
+            </ul>
+        </div>
+    </div> <hr>
+    <h1>Interactive 3D Star Model of Kepler 22</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/star/Kepler-22" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/3.2">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/4.2">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
