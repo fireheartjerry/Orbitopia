@@ -122,9 +122,33 @@ def story5_1():
 def story5_2():
     return render_template('story/5.2.html')
 
-@app.route('/story/6')
-def story6():
-    return render_template('story/6.html')
+@app.route('/story/6.1')
+def story6_1():
+    return render_template('story/6.1.html')
+
+@app.route('/story/6.2')
+def story6_2():
+    return render_template('story/6.2.html')
+
+@app.route('/story/6.3')
+def story6_3():
+    return render_template('story/6.3.html')
+
+@app.route('/story/6.4')
+def story6_4():
+    return render_template('story/6.4.html')
+
+@app.route('/story/6.5')
+def story6_5():
+    return render_template('story/6.5.html')
+
+@app.route('/story/6.6')
+def story6_6():
+    return render_template('story/6.6.html')
+
+@app.route('/story/6.7')
+def story6_7():
+    return render_template('story/6.7.html')
 
 # Calculate the probabilities for all characters based on given answers
 def calculate_probabilities(questions_so_far, answers_so_far):

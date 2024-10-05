@@ -19,85 +19,12 @@
         {% block preload %}{% endblock %}
     </head>
     <body>
-        <div class="content">
-            {% block main %}{% endblock %}
-        </div>
+        {% block main %}{% endblock %}
         {% block script %}{% endblock %}
     </body>
     <script>
         rocket = document.querySelector('.rocket');
         rocket.style.left = rocket.dataset.pos + '%';
         rocket.title = `You're ${rocket.dataset.pos}% there!`;
-
-        // Function to create a shooting star at a given position
-        function createShootingStar(x, y) {
-            const star = document.createElement('div');
-            star.classList.add('shooting-star');
-            star.style.left = x + 'px';
-            star.style.top = y + 'px';
-
-            document.body.appendChild(star);
-
-            // Remove the shooting star after the animation is done
-            setTimeout(() => {
-                star.remove();
-            }, 600);
-
-            // Move the background with the shooting star
-            moveBackgroundWithStar(x, y);
-        }
-
-        // Function to create a ripple effect and move the background
-        function createRipple(x, y) {
-            const ripple = document.createElement('div');
-            ripple.classList.add('ripple-effect');
-            ripple.style.left = (x - 75) + 'px';  // Center the ripple on the cursor
-            ripple.style.top = (y - 75) + 'px';
-
-            document.body.appendChild(ripple);
-
-            // Create stars inside the ripple
-            createStarsInRipple(ripple);
-
-            // Remove the ripple after the animation is done
-            setTimeout(() => {
-                ripple.remove();
-            }, 1200);
-        }
-
-        // Function to create stars inside the ripple effect
-        function createStarsInRipple(ripple) {
-            const numberOfStars = 20; // Number of stars to generate
-            for (let i = 0; i < numberOfStars; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                
-                // Randomly position the star within the ripple
-                const starX = Math.random() * ripple.offsetWidth;
-                const starY = Math.random() * ripple.offsetHeight;
-
-                star.style.left = `${starX}px`;
-                star.style.top = `${starY}px`;
-
-                ripple.appendChild(star);
-            }
-        }
-
-        // Function to move the background dynamically like water when the shooting star appears
-        function moveBackgroundWithStar(x, y) {
-            const movementX = (x / window.innerWidth) * 6 - 3;  // Dynamic water-like movement
-            const movementY = (y / window.innerHeight) * 6 - 3;
-
-            document.body.style.backgroundPosition = `${50 + movementX}% ${50 + movementY}%`;
-        }
-
-        // Event listener for mouse movement to create shooting stars and ripple effects
-        document.addEventListener('mousemove', function (e) {
-            // Create a shooting star at the mouse position
-            createShootingStar(e.clientX, e.clientY);
-
-            // Create a ripple effect at the mouse position
-            createRipple(e.clientX, e.clientY);
-        });
     </script>
 </html>

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="16.66">
+    </div>
+    <<div class="story-text">
+        <h1 class="fs-1 lead">Destination 6 - Kepler 186</h1>
+        <hr>
+        <div class="card bg-dark p-2 t-card left-card">
+            Kepler-186 is a main-sequence M1-type dwarf star located approximately 579 light years away in the constellation of Cygnus. This star is notable for hosting the first Earth-sized planet discovered in the habitable zone: Kepler-186f.
+        </div>
+        <div class="card bg-dark p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Type:</strong> M1-type red dwarf, bordering on K-type orange dwarf.</li>
+                <li><strong>Mass:</strong> 0.544 times the mass of the Sun.</li>
+                <li><strong>Temperature:</strong> Slightly cooler than the Sun.</li>
+                <li><strong>Metallicity:</strong> Roughly half of the Sun's metallicity.</li>
+            </ul>
+        </div>
+        <div class="card bg-dark p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Brightness:</strong> H band magnitude: 11.605, J band magnitude: 12.473, K band magnitude: 11.605.</li>
+                <li><strong>Apparent Magnitude:</strong> 14.90 (R) and 16.40 (B), too dim to be seen with the naked eye.</li>
+                <li><strong>Variable Star:</strong> BY Draconis variable with a 33.695-day brightness fluctuation due to star-spots.</li>
+            </ul>
+        </div>
+        <div class="card bg-dark p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Planetary System:</strong> Kepler-186 hosts five known planets, four of which orbit inside the habitable zone.</li>
+                <li><strong>Kepler-186f:</strong> The first Earth-sized planet discovered in a habitable zone, making it a prime target for the study of potentially habitable worlds.</li>
+            </ul>
+        </div>
+        <div class="card bg-dark p-2 t-card mt-3 left-card">
+            Advanced techniques, such as speckle imaging and adaptive optics from the W. M. Keck and Gemini Observatories, have confirmed the planetary system by ruling out other possibilities.
+        </div>
+        <div class="card bg-dark p-2 t-card mt-3 left-card">
+            As we venture through this star system, we will explore how these exoplanets, especially Kepler-186f, expand our understanding of habitable zones and Earth-like worlds in the universe.
+        </div>
+        <div class="card bg-dark p-2 t-card mt-3 left-card">
+            Prepare for an extraordinary adventure as we set our course through the unknown, expanding the boundaries of human knowledge and understanding of the universe.
+        </div>
+    </div> <hr>
+    <h1>Interactive 3D Star Model of Kepler 186</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/star/Kepler-186" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/5.2">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/6.2">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
