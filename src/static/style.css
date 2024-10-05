@@ -115,3 +115,34 @@ h1 {
     font-size: 1.5em;
     background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
 }
+
+@keyframes flyFromLeft {
+    0% {
+        left: -100%; /* Start off-screen */
+    }
+    100% {
+        left: 0%; /* End at center */
+    }
+}
+
+.left-card {
+    position: absolute;
+    left: -100%; /* Start off-screen */
+    animation: flyFromLeft 1.5s ease-in-out forwards;
+}
+
+@keyframes flyFromRight {
+    0% {
+        right: -100%; /* Start off-screen */
+    }
+    100% {
+        right: 0%; /* End at center */
+    }
+}
+
+.right-card {
+    position: absolute;
+    right: -100%; /* Start off-screen */
+    animation: flyFromRight 1.5s ease-out forwards;
+}
+

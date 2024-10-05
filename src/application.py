@@ -9,6 +9,10 @@ def index():
 def storymode():
     return render_template('story/storymode.html')
 
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
 @app.route('/story/begin')
 def storybegin():
     return render_template('story/begin.html')
