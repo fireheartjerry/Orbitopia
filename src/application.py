@@ -17,13 +17,21 @@ def game():
 def storybegin():
     return render_template('story/begin.html')
 
-@app.route('/story/1')
-def story1():
-    return render_template('story/1.html')
+@app.route('/story/1.1')
+def story1_1():
+    return render_template('story/1.1.html')
 
-@app.route('/story/2')
-def story2():
-    return render_template('story/2.html')
+@app.route('/story/1.2')
+def story1_2():
+    return render_template('story/1.2.html')
+
+@app.route('/story/1.3')
+def story1_3():
+    return render_template('story/1.3.html')
+
+@app.route('/story/2.1')
+def story2_1():
+    return render_template('story/2.1.html')
 
 @app.route('/story/3')
 def story3():
