@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="11.111">
+    </div>
+
+    <div class="story-text">
+        <h1 class="fs-1 lead">Planet System - Kepler 16b</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-16b (formally Kepler-16 (AB)-b) is a Saturn-mass exoplanet consisting of half gas and half rock and ice. It orbits a binary star, Kepler-16, with a period of 229 days. It is the first confirmed, unambiguous example of a circumbinary planet – a planet orbiting not one, but two stars.
+        </div>
+        
+        <h2 class="mt-3">Discovery</h2>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Discovered by Laurance Doyle on 15 September 2011 using the transit method during the Kepler Mission, Kepler-16b's presence was detected through the dimming of one of the system's stars. The discovery team reported that the precision in calculating the sizes and masses of the objects in the Kepler-16 system was among the best for any known exoplanet.
+            Kepler-16b ceased transiting the dimmer star in 2014 and stopped crossing the brighter star in 2018. It will remain undetectable by the transit method until around 2042. In 2021, it became the first circumbinary planet detected by the radial velocity method.
+        </div>
+        
+        <h2 class="mt-3">Characteristics</h2>
+        <h3>Mass, Radius, and Temperature</h3>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-16b is a gas giant with a radius of 0.77 RJ and a mass of approximately 0.333 MJ. It has a temperature of around 188 K (−85 °C; −121 °F).
+        </div>
+        
+        <h3 class="mt-3">Host Stars</h3>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-16b orbits a binary star system consisting of a K-type and an M-type star, which have masses of 0.68 M☉ and 0.20 M☉, respectively. The stars have surface temperatures of 4450 K and 3311 K and orbit each other about every 41 days.
+        </div>
+        
+        <h3 class="mt-3">Orbit</h3>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-16b orbits its parent stars every 228 days at a distance of approximately 0.704 AU. Its small eccentricity remains unexplained, and it is thought to have migrated from elsewhere in the system.
+        </div>
+        
+        <h2 class="mt-3">Potential Habitability</h2>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-16b lies near the outer edge of the habitable zone, with its orbit at about 104 million kilometers from the binary system. While the chances of life on the gas giant itself are remote, simulations suggest the possibility of an Earth-sized moon captured by Kepler-16b.
+        </div>
+        
+        <h2 class="mt-3">Name</h2>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            The discovery team initially denoted it as Kepler-16 (AB)-b. Informally, it has been referred to as "Tatooine," a reference to the fictional planet from the Star Wars series due to its orbit around two stars.
+        </div>
+    </div>
+    
+
+    <!-- Planet properties grid -->
+    <div class="planet-grid">
+        <div class="grid-item"><strong class="info-title">Planet Radius:</strong> 0.754 x Jupiter</div>
+        <div class="grid-item"><strong class="info-title">Planet Type:</strong> Gas Giant</div>
+        <div class="grid-item"><strong class="info-title">Discovery Method:</strong> Transit</div>
+        <div class="grid-item"><strong class="info-title">Planet Mass:</strong> 0.333 Jupiters</div>
+        <div class="grid-item"><strong class="info-title">Discovery Date:</strong> 2011</div>
+        <div class="grid-item"><strong class="info-title">Orbital Radius:</strong> 0.7048 AU</div>
+        <div class="grid-item"><strong class="info-title">Orbital Period:</strong> 228.8 days</div>
+        <div class="grid-item"><strong class="info-title">Eccentricity:</strong> 0.01</div>
+    </div>
+
+    <hr>
+
+    <!-- 3D Model and buttons -->
+    <h1>Interactive 3D Model of Kepler 16b</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/planet/Kepler-16_b" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/2.1">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/3.1">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

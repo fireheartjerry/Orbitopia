@@ -1,0 +1,120 @@
+/* General body and typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f8fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Game container styling */
+.game-container {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ff0066 0%, #800080 50%, #003366 100%);
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+/* Title with complementary color */
+h2, .result-character, label {
+    color: #d4a5f5;  /* Soft lavender tone */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Headings */
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 25px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Form options */
+form {
+    margin-top: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.radio-option {
+    margin: 0 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+/* Buttons */
+button[type="submit"], button.quit-btn, a.btn-success, a.quit-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #842f6d;  /* Default button color */
+    color: #d4a5f5;  /* Button text matches the title color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effects */
+button[type="submit"]:hover, a.btn-success:hover {
+    background-color: #39142f; /* A blue color that complements white text */
+    color: #ffffff; /* Keep text white */
+    transform: scale(1.05);
+}
+
+button.quit-btn:hover, a.quit-btn:hover {
+    background-color: #39142f; /* Darker purple */
+    color: #ffffff; /* Change text to white */
+    transform: scale(1.05);
+}
+
+button[type="submit"]:active, button.quit-btn:active, a.btn-success:active, a.quit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Quit button reset styling */
+button.quit-btn, a.quit-btn {
+    padding: 12px 25px;
+    background-color: #842f6d;  /* Reset background color */
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .radio-option {
+        font-size: 1.3rem;
+    }
+
+    button[type="submit"], button.quit-btn, a.btn-success, a.quit-btn {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Fade-in animation for smooth appearance */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

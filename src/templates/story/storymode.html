@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Storymode{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        overflow: hidden;
+    }
+</style>
+
+<!-- Space Zoom Container -->
+<div id="space-zoom" class="space-zoom"></div>
+
+<!-- Button that appears after zoom effect -->
+<div id="begin-button" class="text-center" style="opacity: 0;">
+    <a class="btn btn-outline-info fw-bold fs-1 mt-5" href="/story/begin">Begin Storymode</a>
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+<script>
+    // Function to show "Begin Story" button after the zoom effect is complete
+    window.onload = function() {
+        setTimeout(function() {
+            document.getElementById('begin-button').style.opacity = '1';
+        }, 500); // Show button after 8 seconds (same as animation duration)
+    }
+</script>
+{% endblock %}

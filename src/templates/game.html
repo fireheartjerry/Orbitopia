@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}Exoplanet Game{% endblock %}
+
+{% block main %}
+<link rel="stylesheet" href="/static/games.css">
+
+<style>
+    body {
+        background-image: url("/static/gamebg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="game-container">
+        {% if result %}
+            <!-- Show result if the game is finished -->
+            <h2>The AI thinks you're thinking of: <span class="result-character">{{ result }}</span></h2>
+            <div class="game-actions">
+                <a href="{{ url_for('reset') }}" class="btn btn-success submit-btn">Play Again</a>
+                <a href="{{ url_for('index') }}" class="btn quit-btn">Exit</a>
+            </div>
+        {% else %}
+            <!-- Show current question -->
+            <h2>{{ question_text }}</h2>
+            <form action="{{ url_for('game') }}" method="get" onsubmit="return validateForm()">
+                <input type="hidden" name="question" value="{{ question }}">
+                <div class="options">
+                    <label class="radio-option">
+                        <input type="radio" name="answer" value="1"> Yes
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="answer" value="0"> No
+                    </label>
+                </div>
+                <button type="submit" class="btn submit-btn">Submit Answer</button>
+                <button type="button" class="btn quit-btn" onclick="confirmQuit(this)">Quit</button>
+                <div id="error-message" style="color:red; display:none;">Please select an answer before submitting!</div>
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var options = document.getElementsByName('answer');
+        var isChecked = false;
+        for (var i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                isChecked = true;
+                break;
+            }
+        }
+
+        var submitButton = document.querySelector('.submit-btn');
+        
+        if (!isChecked) {
+            document.getElementById('error-message').style.display = 'block';
+            // Apply the special styling to the Submit Answer button when no option is selected
+            submitButton.style.backgroundColor = '#39142f';
+            submitButton.style.transform = 'scale(1.05)';
+            submitButton.style.color = '#ffffff'; // Keep text white for better visibility
+            return false; // Prevent form submission
+        } else {
+            document.getElementById('error-message').style.display = 'none';
+            // Reset button style when form is successfully submitted
+            submitButton.style.backgroundColor = '#842f6d'; // Original background
+            submitButton.style.color = '#d4a5f5'; // Reset text color
+            submitButton.style.transform = 'scale(1)';
+            return true; // Allow form submission
+        }
+    }
+
+    function confirmQuit(button) {
+        var userConfirmed = confirm("Are you sure you want to quit?");
+        if (userConfirmed) {
+            window.location.href = "{{ url_for('index') }}";
+        } else {
+            // Reset button styling to the original state if they don't confirm
+            button.style.backgroundColor = '#842f6d';  // Reset background color
+            button.style.color = '#d4a5f5'; // Reset text color
+            button.style.transform = 'scale(1)';
+        }
+    }
+</script>
+{% endblock %}

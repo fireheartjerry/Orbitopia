@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="22.22">
+    </div>
+    <div class="story-text">
+        <h1 class="fs-1 lead">Destination 2 - Kepler 16</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card left-card">
+            Kepler-16 is an eclipsing binary star system located in the constellation of Cygnus, observed by the Kepler spacecraft. Both stars are smaller than the Sun, with Kepler-16A being a K-type main-sequence star, and Kepler-16B an M-type red dwarf.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Type:</strong> Eclipsing binary star system.</li>
+                <li><strong>Primary Star (Kepler-16A):</strong> K-type main-sequence star.</li>
+                <li><strong>Secondary Star (Kepler-16B):</strong> M-type red dwarf.</li>
+                <li><strong>Separation:</strong> The two stars are separated by 0.22 AU.</li>
+                <li><strong>Orbital Period:</strong> The stars orbit their common center of mass every 41 days.</li>
+                <li><strong>Planet:</strong> Hosts one known Saturn-sized exoplanet, Kepler-16b, in a circumbinary orbit.</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <ul>
+                <li><strong>Eclipses:</strong> The system is nearly edge-on to Earth, leading to mutual eclipses between the stars.</li>
+                <li>Primary star is partially eclipsed by the secondary star for 6 hours, with a brightness drop of 0.15 magnitudes.</li>
+                <li>Secondary star is completely occulted by the primary star for 2 hours, causing a smaller brightness drop of 0.02 magnitudes.</li>
+                <li>Exoplanet Kepler-16b causes shallow eclipses, reducing brightness by more than the secondary eclipse when transiting the primary star.</li>
+                <li>When Kepler-16b transits the secondary star, brightness decreases by 0.001 magnitudes.</li>
+            </ul>
+        </div>
+    </div> <hr>
+    <h1>Kepler 16A - First Binary Star</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/star/Kepler-16_A" id="kepler-16a-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+    <hr>
+    <h1>Kepler 16B - Second Binary Star</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/star/Kepler-16_B" id="kepler-16a-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/1.3">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/2.2">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

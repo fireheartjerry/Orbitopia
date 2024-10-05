@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="11.111">
+    </div>
+
+    <div class="story-text">
+        <h1 class="fs-1 lead">Planet System - Kepler 452b</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-452b (sometimes quoted to be an Earth 2.0 or Earth's Cousin) is a super-Earth exoplanet orbiting within the inner edge of the habitable zone of the sun-like star Kepler-452. 
+            It is located about 1,400 light-years from Earth in the constellation of Cygnus.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <strong>Discovery:</strong> Discovered by the Kepler Science team on 23 July 2015 (announced).
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <strong>Orbital Characteristics:</strong>
+            <ul>
+                <li>Semi-major axis: 1.046 AU</li>
+                <li>Orbital period: 384.843 days</li>
+                <li>Inclination: 89.806 degrees</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <strong>Physical Characteristics:</strong>
+            <ul>
+                <li>Mean radius: 1.5 R🜨</li>
+                <li>Mass: 5 ME (estimated)</li>
+                <li>Surface gravity: 1.9 g (estimated)</li>
+                <li>Temperature: Teq: 265 K (−8 °C; 17 °F)</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-452b orbits its star at a distance of 1.04 AU from its host star, with an orbital period of roughly 385 days. 
+            It is the first potentially rocky super-Earth planet discovered orbiting within the habitable zone of a very Sun-like star. 
+            However, it is unknown if it is entirely habitable as it is receiving slightly more energy from its star than Earth, which could lead to a runaway greenhouse effect.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            The host star, Kepler-452, is a G-type star with about the same mass as the sun. It is estimated to be around 6 billion years old, which is 1.5 billion years older than the Sun.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            SETI researchers have begun targeting Kepler-452b in the search for extraterrestrial intelligence, using the Allen Telescope Array to scan for radio transmissions.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <strong>Distance:</strong> Kepler-452b is about 1,800 light-years from Earth, and at the speed of the New Horizons spacecraft, it would take approximately 30 million years to get there.
+        </div>
+    </div>
+
+    <!-- Planet properties grid -->
+    <div class="planet-grid">
+        <div class="grid-item"><strong class="info-title">Planet Radius:</strong> 1.63 x Earth</div>
+        <div class="grid-item"><strong class="info-title">Planet Type:</strong> Super Earth</div>
+        <div class="grid-item"><strong class="info-title">Discovery Method:</strong> Transit</div>
+        <div class="grid-item"><strong class="info-title">Planet Mass:</strong> 3.29 Earths</div>
+        <div class="grid-item"><strong class="info-title">Discovery Date:</strong> 2015</div>
+        <div class="grid-item"><strong class="info-title">Orbital Radius:</strong> 1.046 AU</div>
+        <div class="grid-item"><strong class="info-title">Orbital Period:</strong> 384.8 days</div>
+        <div class="grid-item"><strong class="info-title">Eccentricity:</strong> 0.0</div>
+    </div>
+
+    <hr>
+
+    <!-- 3D Model and buttons -->
+    <h1>Interactive 3D Model of Kepler 452b</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/planet/Kepler-452_b" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/5.1">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/6.1">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,359 @@
+:root {
+    --theme-gradient: linear-gradient(to right, #4facfe, #00f2fe);
+    --ripple-color: rgba(255, 255, 255, 0.3);
+    --star-color: rgba(255, 255, 255, 0.9);
+    --shooting-star-color: rgb(255, 230, 0);
+    --glow-color: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    width: 100%;
+    background-color: black !important;
+    z-index: 1 !important;
+    color: white !important;
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Ensure content stays above the background effects */
+}
+
+.landing {
+    width: 100%;
+    height: 100vh;
+    background-image: url('landingbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1 !important;
+}
+
+.overlay {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Keep your overlay color */
+    z-index: 1 !important;
+    display: inline-block; /* Dynamically adjust height based on content */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.name {
+    position: relative;
+    font-size: 1.2em;
+    background: var(--theme-gradient); /* Lighter gradient with bright blue tones */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 5em;
+}
+
+/* Improved Card Styling */
+.card {
+    transition: 
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+        color 0.3s ease, 
+        background-color 0.3s ease, 
+        opacity 0.3s ease, 
+        box-shadow 0.3s ease !important;
+    border-radius: 1em;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+}
+
+.bg-space {
+    background-color: #06272c !important; /* Dark, space-like */
+}
+
+.card:hover {
+    transform: scale(1.03);
+    color: white !important;
+    background: linear-gradient(135deg, #115c67, #0a3c44) !important;
+    opacity: 1 !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* Transition for Text Cards */
+.t-card {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.t-card:hover {
+    opacity: 1;
+}
+
+/* Space Zoom Animation */
+@keyframes zoomThroughSpace {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(4.5); /* Adjusted for dramatic effect */
+    }
+}
+
+.space-zoom {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: url('storymode.jpg') no-repeat center center;
+    background-size: cover;
+    transform-origin: center;
+    animation: zoomThroughSpace 3s ease forwards;
+}
+
+/* Improved Button Styling */
+#begin-button {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #00c8ff, #ff00a5);
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.75s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#begin-button:hover {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 15px 40px rgba(0, 200, 255, 0.8);
+}
+
+/* Path Styling */
+.path {
+    position: absolute;
+    top: 7%;
+    left: 7%;
+    width: 86%;
+    height: 0.3em;
+    background: linear-gradient(135deg, #ff00a5, #00c8ff);
+    border-radius: 0.15em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Rocket Animation */
+.rocket {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center;
+    animation: rocketFly 3.5s ease-in-out infinite;
+}
+
+@keyframes rocketFly {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-5px);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) translateY(5px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-5px);
+    }
+}
+
+/* Story Text */
+.story-text {
+    position: relative;
+    color: white;
+    margin-top: 7.5%;
+    font-size: 1.8em;
+    line-height: 1.4;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Left Card Animation */
+@keyframes flyFromLeft {
+    0% {
+        left: -100%; /* Start off-screen */
+    }
+    100% {
+        left: 0%; /* End at center */
+    }
+}
+
+.left-card {
+    position: absolute;
+    left: -100%; /* Start off-screen */
+    animation: flyFromLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Right Card Animation */
+@keyframes flyFromRight {
+    0% {
+        right: -100%; /* Start off-screen */
+    }
+    100% {
+        right: 0%; /* End at center */
+    }
+}
+
+.right-card {
+    position: absolute;
+    right: -100%; /* Start off-screen */
+    animation: flyFromRight 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 1em;
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(0, 200, 255, 0.3), rgba(255, 0, 150, 0.3));
+    transform: rotate(45deg);
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+}
+
+.grid-item:hover::before {
+    opacity: 0.4;
+}
+
+
+.grid-item {
+    font-size: 1.2rem;
+    border-radius: 0.5em;
+    padding: 1em;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 
+        transform 0.4s ease, 
+        box-shadow 0.4s ease, 
+        border 0.4s ease, 
+        background-color 0.4s ease, 
+        filter 0.4s ease;
+}
+
+.grid-item:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(84, 212, 255, 0.8), 0 0 30px rgba(0, 191, 255, 0.5);
+    transform: scale(1.05);
+    border: 2px solid rgb(84, 212, 255);
+    background-color: rgb(0, 191, 255);
+    filter: brightness(1.1);
+}
+
+.grid-item:hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5em;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.6), rgba(255, 255, 255, 0.1));
+    z-index: -1;
+    filter: blur(20px);
+}
+
+.planet-header {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .planet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #343a40;
+    color: #ffffff;
+    position: relative;
+}
+
+th::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ffcc00;
+}
+
+tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+tr:hover {
+    background-color: #d3d3d3;
+    transition: background-color 0.3s ease;
+}
+
+td {
+    border-bottom: 1px solid #dee2e6;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+@media (max-width: 600px) {
+    table {
+        font-size: 0.9rem;
+    }
+}

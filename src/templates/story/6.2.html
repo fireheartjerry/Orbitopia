@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="11.111">
+    </div>
+
+    <div class="story-text">
+        <h1 class="fs-1 lead">Planet System - Kepler 186b</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Kepler-186b (also known as KOI-571.03) is an exoplanet located around 582 light-years away from Earth. It orbits a red dwarf named Kepler-186, the same star system discovered by the Kepler space telescope.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <strong>Discovery:</strong> Kepler-186b was discovered by the Kepler Science team and is the innermost and smallest planet of its system.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <strong>Orbital Characteristics:</strong>
+            <ul>
+                <li>Orbital period: Just under 4 Earth days</li>
+                <li>Located very close to its parent star</li>
+                <li>Tidally locked, with one hemisphere in constant daylight and the other in eternal darkness</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            <strong>Physical Characteristics:</strong>
+            <ul>
+                <li>Not suitable for life due to proximity to its star</li>
+            </ul>
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            The other planets in the system include Kepler-186c, d, e, and f. Only Kepler-186f is located within the habitable zone, making it the best candidate for potential life.
+        </div>
+    </div>
+    
+
+    <!-- Planet properties grid -->
+    <div class="planet-grid">
+        <div class="grid-item"><strong class="info-title">Planet Radius:</strong> 1.07 x Earth</div>
+        <div class="grid-item"><strong class="info-title">Planet Type:</strong> Super Earth</div>
+        <div class="grid-item"><strong class="info-title">Discovery Method:</strong> Transit</div>
+        <div class="grid-item"><strong class="info-title">Planet Mass:</strong> 1.24 Earths</div>
+        <div class="grid-item"><strong class="info-title">Discovery Date:</strong> 2014</div>
+        <div class="grid-item"><strong class="info-title">Orbital Radius:</strong> 0.0343 AU</div>
+        <div class="grid-item"><strong class="info-title">Orbital Period:</strong> 3.9 days</div>
+        <div class="grid-item"><strong class="info-title">Eccentricity:</strong> 0.0</div>
+    </div>
+
+    <hr>
+
+    <!-- 3D Model and buttons -->
+    <h1>Interactive 3D Model of Kepler 186b</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/planet/Kepler-186_b" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/6.1">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/6.3">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

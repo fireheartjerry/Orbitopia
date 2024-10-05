@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Kepler 70{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="5.555">
+    </div>
+    <div class="story-text">
+        <h1 class="fs-1 lead">Destination 1 - Kepler 70</h1>
+        <hr>
+        <div class="card bg-space p-2 t-card left-card">
+            Kepler 70, also known as KIC 5807616 and KOI-55, is around 4,000 light years from Earth! It's found in the Cygnus constellation and has an apparent visual magnitude of 14.87.
+        </div>
+        <div class="card bg-space p-2 t-card mt-3 left-card">
+            Properties
+            <ul>
+                <li><strong>Type:</strong> Subdwarf B star (sdB).</li>
+                <li><strong>Temperature:</strong> 27,730 K (about 6 times hotter than the Sun's surface).</li>
+                <li><strong>Luminosity:</strong> 18.9 times that of the Sun.</li>
+                <li><strong>Radius:</strong> 0.203 times the Sun's radius.</li>
+                <li><strong>Mass:</strong> 0.496 times the Sun's mass.</li>
+                <li><strong>Lifecycle:</strong> Passed the red giant stage 18.4 million years ago; currently fusing helium in its core.</li>
+                <li><strong>Future:</strong> Will contract into a white dwarf when it runs out of helium.</li>
+            </ul>
+        </div>
+    </div> <hr>
+    <h1>Interactive 3D Star Model of Kepler 70</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/star/KOI-55" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/begin">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/1.2">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
