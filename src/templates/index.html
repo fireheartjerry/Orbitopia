@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+<div class="landing align-items-center justify-content-center container-fluid">
+    <br><br><br>
+    <center class="overlay">
+        <h1 class="fw-bold" style="font-size: 4em;">Welcome to<br><span class="name">Orbitopia</span></h1>
+    </center>
+
+    <div class="row mt-3">
+        <!-- Storymode Card -->
+        <div class="col-lg">
+            <div class="card bg-dark text-white p-3 t-card" style="border-radius: 10px; overflow: hidden;">
+                <div class="card-body">
+                    <h5 class="card-title">Storymode</h5>
+                    <p class="card-text">
+                        Visit 6 exoplanet systems on a spaceship!
+                    </p>
+                    <a href="/story" class="btn btn-outline-info btn-lg mt-3">Start Storymode</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Exoplanet Game Card -->
+        <div class="col-lg">
+            <div class="card bg-dark text-white p-3 t-card" style="border-radius: 10px; overflow: hidden;">
+                <div class="card-body">
+                    <h5 class="card-title">Exoplanet Game</h5>
+                    <p class="card-text">
+                        Play a fun AI exoplanet game.
+                    </p>
+                    <a href="/exoplanet-game" class="btn btn-outline-info btn-lg mt-3">Play Exoplanet Game</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

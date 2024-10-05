@@ -1,0 +1,117 @@
+:root {
+    --theme-gradient: linear-gradient(to right, #4facfe, #00f2fe); /* Define the gradient as a variable */
+}
+
+body {
+    width: 100%;
+    background-color: black !important;
+    z-index: 1 !important;
+    color: white !important;
+}
+
+.landing {
+    width: 100%;
+    height: 100vh;
+    background-image: url('landingbg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 2 !important;
+}
+
+.overlay {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Keep your overlay color */
+    z-index: 3 !important;
+    display: inline-block; /* Dynamically adjust height based on content */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+
+.name {
+    position: relative;
+    font-size: 1.2em;
+    background: var(--theme-gradient); /* Lighter gradient with bright blue tones */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 5em;
+}
+
+.card-img-top {
+    filter: brightness(80%);
+}
+
+.card {
+    transition: transform 0.3s ease-in-out !important;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+.t-card {
+    opacity: 0.75;
+}
+
+
+
+/* Use transform scale instead of background-size */
+@keyframes zoomThroughSpace {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(4.5); /* Adjust this scale factor as needed */
+    }
+}
+
+.space-zoom {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: url('storymode.jpg') no-repeat center center;
+    background-size: cover;
+    transform-origin: center;
+    animation: zoomThroughSpace 3s ease forwards;
+}
+
+#begin-button {
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset for perfect centering */
+    z-index: 9999; /* High z-index to stay on top */
+    transition: opacity 0.75s ease-in-out; /* Optional: Add fade-in effect */
+}
+
+.path {
+    position: absolute;
+    top: 5%;
+    left: 7%;
+    width: 86%;
+    height: 0.3em;
+    background: var(--theme-gradient);
+    border-radius: 0.15em;
+}
+
+
+.rocket {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    width: 64px;
+    height: 64px;
+    transform: translate(-50%, -50%) rotate(45deg); /* Shift to center and rotate */
+    transform-origin: center; /* Rotate around center */
+}
+
+.story-text {
+    position: relative;
+    color: white;
+    margin-top: 7.5%;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
+}
