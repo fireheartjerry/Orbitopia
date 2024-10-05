@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}Story Intro{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        background-image: url("/static/storybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<div class="container">
+    <div class="path">
+        <img src="/static/rocket.png" class="rocket" data-pos="11.111">
+    </div>
+
+    <div class="story-text">
+        <h1 class="fs-1 lead">Planet System - Kepler 16b</h1>
+        <hr>
+        <p>
+            Kepler-16b is a world where two suns set over the horizon instead of just one, the first Tatooine-like planet found in our galaxy.
+        </p>
+    </div>
+
+    <!-- Planet properties grid -->
+    <div class="planet-grid">
+        <div class="grid-item"><strong class="info-title">Planet Radius:</strong> 0.754 x Jupiter</div>
+        <div class="grid-item"><strong class="info-title">Planet Type:</strong> Gas Giant</div>
+        <div class="grid-item"><strong class="info-title">Discovery Method:</strong> Transit</div>
+        <div class="grid-item"><strong class="info-title">Planet Mass:</strong> 0.333 Jupiters</div>
+        <div class="grid-item"><strong class="info-title">Discovery Date:</strong> 2011</div>
+        <div class="grid-item"><strong class="info-title">Orbital Radius:</strong> 0.7048 AU</div>
+        <div class="grid-item"><strong class="info-title">Orbital Period:</strong> 228.8 days</div>
+        <div class="grid-item"><strong class="info-title">Eccentricity:</strong> 0.01</div>
+    </div>
+
+    <hr>
+
+    <!-- 3D Model and buttons -->
+    <h1>Interactive 3D Model of Kepler 70b</h1>
+    <iframe class="embed-responsive-item mt-3" src="https://eyes.nasa.gov/apps/exo/#/planet/Kepler-16_b" id="kepler-70-frame" allowfullscreen scrolling="false" width="1026" height="578"></iframe>
+
+    <div class="btn-group-sm mt-3" role="group">
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/2.1">
+        <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-outline-info btn-lg mw-2" href="/story/3.1">
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
