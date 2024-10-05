@@ -1,0 +1,147 @@
+/* General body and typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f8fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Game container styling with flipped gradient (dark pink -> dark purple -> dark blue) */
+.game-container {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ff0066 0%, #800080 50%, #003366 100%);
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+/* Apply gradient to text using lighter shades of pink, purple, and blue */
+h2, .result-character, label {
+    background: linear-gradient(to right, #ffccff, #d4a5f5, #add8e6);  /* Light pink, lavender, and light blue */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Result character styling */
+.result-character {
+    font-weight: bold;
+}
+
+/* Headings */
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 25px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Form options */
+form {
+    margin-top: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.radio-option {
+    margin: 0 20px;
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+/* Buttons */
+button[type="submit"] {
+    padding: 12px 25px;
+    font-size: 1.25rem;
+    color: #ffffff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+button[type="submit"]:active {
+    background-color: #1e7e34;
+}
+
+/* Link buttons */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+a.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+a.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+a.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .radio-option {
+        font-size: 1.3rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    a {
+        font-size: 1.1rem;
+        padding: 8px 20px;
+    }
+}
+
+/* Fade-in animation for smooth appearance */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

@@ -3,6 +3,7 @@
 {% block title %}Game{% endblock %}
 
 {% block main %}
+<<<<<<< Updated upstream
   <div class="game-container">
       {% if result %}
           <!-- Show result if the game is finished -->
@@ -23,4 +24,66 @@
           </form>
       {% endif %}
   </div>
+=======
+<link rel="stylesheet" href="/static/games.css">
+
+<style>
+    body {
+        background-image: url("/static/gamebg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="game-container">
+        {% if result %}
+            <!-- Show result if the game is finished -->
+            <h2>The AI thinks you're thinking of: <span class="result-character">{{ result }}</span></h2>
+            <div class="game-actions">
+                <a href="{{ url_for('reset') }}" class="btn btn-primary">Play Again</a>
+                <a href="{{ url_for('index') }}" class="btn btn-danger">Exit</a>
+            </div>
+        {% else %}
+            <!-- Show current question -->
+            <h2>{{ question_text }}</h2>
+            <form id="gameForm" action="{{ url_for('game') }}" method="get" onsubmit="return validateForm()">
+                <input type="hidden" name="question" value="{{ question }}">
+                <div class="options">
+                    <label class="radio-option">
+                        <input type="radio" name="answer" value="1"> Yes
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="answer" value="0"> No
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Answer</button>
+                <p id="error-message" style="color: red; display: none;">Please select an option before proceeding.</p>
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var options = document.getElementsByName('answer');
+        var isChecked = false;
+        for (var i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                isChecked = true;
+                break;
+            }
+        }
+
+        if (!isChecked) {
+            document.getElementById('error-message').style.display = 'block';
+            return false; // Prevent form submission
+        } else {
+            document.getElementById('error-message').style.display = 'none';
+            return true; // Allow form submission
+        }
+    }
+</script>
+>>>>>>> Stashed changes
 {% endblock %}
