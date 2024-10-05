@@ -94,6 +94,10 @@ def story1_3():
 def story2_1():
     return render_template('story/2.1.html')
 
+@app.route('/story/2.2')
+def story2_2():
+    return render_template('story/2.2.html')
+
 @app.route('/story/3')
 def story3():
     return render_template('story/3.html')
