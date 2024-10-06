@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block title %}The Sun{% endblock %}
+
+{% block main %}
+<style>
+    body {
+        background-image: url("/static/sunbg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        backdrop-filter: blur(5px);
+    }
+
+    .resources-section {
+        margin-top: 3rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .resources-section h2 {
+        color: #ffcc00;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .resources-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+    }
+
+    .resources-item {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+    }
+
+    .resources-item a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .resources-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(255, 204, 0, 0.6);
+    }
+
+    .resources-item:hover a {
+        color: #ffcc00;
+    }
+</style>
+
+<br>
+<br>
+<div class="container text-light text-center">
+    <h1>NASA Heliophysics Big Year - <b>2024</b></h1>
+
+    <div class="text-center mt-4">
+        <img src="https://media1.tenor.com/m/Q3zUTlaT4zwAAAAd/sun.gif" class="rounded-circle mb-4" width="300" alt="The Sun Animation">
+    </div>
+    
+    <div class="mb-4" style="max-width: 750px; margin: 0 auto;">
+        <p class="lead">
+            NASA's "Helio Big Year," running from October 2023 to December 2024, celebrates the Sun's influence by making heliophysics accessible to everyone and encouraging citizen science participation. People can witness solar eclipses, auroras, and follow the Parker Solar Probe's close encounters with the Sun.
+        </p>
+        <p class="lead">
+            In a similar spirit, our website focuses on advancing exoplanet education for underserved communities. We aim to provide engaging resources and opportunities for hands-on participation, ensuring that everyone has access to the fascinating world of exoplanet research. By fostering curiosity and discovery, we hope to empower individuals to learn about and contribute to this exciting field of science.
+        </p>
+        <div class="quote-container mt-4 p-3" style="border-left: 4px solid #ffcc00; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px;">
+            <blockquote class="blockquote" style="font-size: 22px; font-style: italic; color: #ffffff; line-height: 1.5;">
+                <p>“Our whole solar system – every planet and even the space in between them – is connected to and influenced by the Sun. It’s a good metaphor for our increasingly-connected world, where we need to think about how changes in one area can have widespread impacts.”</p>
+            </blockquote>
+            <footer class="blockquote-footer text-warning" style="font-size: 18px; font-weight: bold;">
+                Sarah Frazier, Heliophysics Communications Manager at NASA’s Goddard Space Flight Center
+            </footer>
+        </div><br><br>
+        <iframe width="738" height="415" src="https://www.youtube.com/embed/G3BFbB5FyBc" title="Introducing the Heliophysics Big Year" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="resources-section">
+        <h2 style="color: rgb(255, 204, 0)!important;">More Information on Heliphysics</h2>
+        <ul class="resources-list">
+            <li class="resources-item">
+                <a href="https://www.nasa.gov/heliophysics" target="_blank" class="d-block p-3">
+                    <strong>NASA Heliophysics</strong>
+                    <br>
+                    <p style="font-weight: normal;">Comprehensive resources on heliophysics and solar research.</p>
+                </a>
+            </li>
+            <li class="resources-item">
+                <a href="https://solarsystem.nasa.gov/solar-system/sun/overview/" target="_blank" class="d-block p-3">
+                    <strong>NASA - The Sun</strong>
+                    <br>
+                    <p style="font-weight: normal;">Explore educational resources about the Sun in NASA</p>
+                </a>
+            </li>
+            <li class="resources-item">
+                <a href="https://science.nasa.gov/sun/facts/" target="_blank" class="d-block p-3">
+                    <strong>Facts About the Sun</strong>
+                    <br>
+                    <p style="font-weight: normal;">Our Sun is 4.5 billion years old.</p>
+                </a>
+            </li>
+            <li class="resources-item">
+                <a href="https://science.nasa.gov/heliophysics/programs/research/" target="_blank" class="d-block p-3">
+                    <strong>Heliophysics Research</strong>
+                    <br>
+                    <p style="font-weight: normal;">Learn more about heliophysics.</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <br>
+</div>
+{% endblock %}

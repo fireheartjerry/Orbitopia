@@ -62,13 +62,13 @@ def graphs():
 def map():
     return render_template('map.html')
 
-@app.route('/starmap')
-def starmap():
-    return render_template('starmap.html')
+@app.route('/sungame')
+def sungame():
+    return render_template('sungame.html')
 
-@app.route('/aliens')
-def aliens():
-    return render_template("aliens.html")
+@app.route('/sun')
+def sun():
+    return render_template("sun.html")
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
