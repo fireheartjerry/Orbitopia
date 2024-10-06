@@ -17,13 +17,13 @@
     
     <div class="links-grid" style="z-index: 5 !important;">
         {% for row in links %}
-        <a href="{{ row.link }}" target="_blank" class="resource-card">
-            <div class="card-content">
-                <h2>{{ row.description.title }}</h2>
-                <p>{{ row.description.summary }}</p>
-                <span class="read-more">Learn More &rarr;</span>
-            </div>
-        </a>
+            <a href="{{ row.link }}" target="_blank" class="resource-card">
+                <div class="card-content">
+                    <h2>{{ row.description.title }}</h2>
+                    <p>{{ row.description.summary }}</p>
+                    <span class="read-more">Learn More &rarr;</span>
+                </div>
+            </a>
         {% endfor %}
     </div>
 </section>
@@ -57,7 +57,7 @@
     /* Grid Layout */
     .links-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns */
         gap: 40px;
         margin-bottom: 50px;
         opacity: 0;
@@ -151,6 +151,16 @@
     
         .card-content p {
             font-size: 1rem;
+        }
+        
+        .links-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .links-grid {
+            grid-template-columns: 1fr; /* 1 column on extra small screens */
         }
     }
     
@@ -266,15 +276,15 @@
     }
 
     .clouds{
-        background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
-        z-index:3;
-        position: fixed;
+        background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat-x;
+        z-index:2;
+        position:fixed;
 
-        -moz-animation:move-clouds-back 200s linear infinite;
-        -ms-animation:move-clouds-back 200s linear infinite;
-        -o-animation:move-clouds-back 200s linear infinite;
-        -webkit-animation:move-clouds-back 200s linear infinite;
-        animation:move-clouds-back 200s linear infinite;
+        -moz-animation:move-clouds-back 300s linear infinite;
+        -ms-animation:move-clouds-back 300s linear infinite;
+        -o-animation:move-clouds-back 300s linear infinite;
+        -webkit-animation:move-clouds-back 300s linear infinite;
+        animation:move-clouds-back 300s linear infinite;
     }
 </style>
 {% endblock %}

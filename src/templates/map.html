@@ -8,4 +8,121 @@
 
 <iframe src="https://zachnguyen.github.io/Exoplanets-Visualization/images/Star_Coordinate_Viz_Norm.html" sandbox="allow-same-origin allow-scripts" width="100%" height="800" scrolling="no" seamless="seamless" frameborder="0"> </iframe>
 
+<div class="analysis-block">
+    <h2>Analysis of Graph Axes</h2>
+    <p class="techy-text">
+        The three axes of orientation in space (x, y, and z) can be represented as follows:
+    </p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mrow>
+            <msub>
+                <mi>x</mi>
+                <mn>1</mn>
+            </msub>
+            <mo>,</mo>
+            <msub>
+                <mi>y</mi>
+                <mn>2</mn>
+            </msub>
+            <mo>,</mo>
+            <msub>
+                <mi>z</mi>
+                <mn>3</mn>
+            </msub>
+        </mrow>
+    </math>
+    <p class="techy-text">
+        These axes define the 3D spatial coordinates with x for width, y for height, and z for depth, often used in scientific and engineering applications. These represent the planet's relative orientation in space with respect to our sun.
+    </p>
+    <div class="techy-text">
+        <h2>Normalized Effective Temperature Scale</h2>
+        <p>
+            The color bar shown represents the <strong>Normalized Effective Temperature</strong> scale, where the star temperatures have been normalized to a range between 0 and 1. In this scale, a value of <span style="color:blue;">0</span> (deep blue) corresponds to the coolest stars, while a value of <span style="color:red;">1</span> (deep red) represents the hottest stars.
+        </p>
+        <p>
+            The normalization of temperatures is calculated using the equation:
+        </p>
+    
+        <div class="math-container" style="text-align: center; margin: 20px 0;">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>T</mi> <mo>-</mo> <mi>T<sub>min</sub></mi>
+                        </mrow>
+                        <mrow>
+                            <mi>T<sub>max</sub></mi> <mo>-</mo> <mi>T<sub>min</sub></mi>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mi>Normalized Temperature</mi>
+                </mrow>
+            </math>
+        </div>
+        
+    
+        <p>
+            Where <em>T</em> is the effective temperature of the star, and <em>T<sub>min</sub></em> and <em>T<sub>max</sub></em> are the minimum and maximum temperatures in the data set. This equation adjusts the temperatures so that even though actual star temperatures can vary from a few thousand to tens of thousands of Kelvin, the normalized scale gives a clear relative comparison.
+        </p>
+        <p>
+            As seen in the gradient bar, cooler stars are shaded blue, transitioning to warmer colors like yellow and orange, and finally to red, which marks the hottest stars. This relative scaling makes it easier to distinguish between cooler and hotter stars without the need to consider absolute temperature values.
+        </p>
+        <p>
+            For example, large cool stars often have a blue tint, indicating they are older and have exhausted much of their nuclear fuel, while younger, more active stars tend to appear red. This provides insight into stellar evolution and the distribution of star temperatures in a visually intuitive way.
+        </p>
+        <p class="techy-text">
+            To convert an absolute temperature back to its normalized value, you can use the following equation:
+        </p>
+    
+        <center><div class="math-container">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mrow>
+                    <mi>T</mi> 
+                    <mo>=</mo>
+                    <mrow>
+                        <mi>Normalized Temperature</mi> 
+                        <mo>&#8290;</mo>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>T<sub>max</sub></mi>
+                            <mo>-</mo>
+                            <mi>T<sub>min</sub></mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mi>T<sub>min</sub></mi>
+                    </mrow>
+                </mrow>
+            </math>
+        </div></center>
+    
+        <p class="techy-text">
+            This approach allows us to compare temperatures relative to the observed dataset, enhancing our understanding of stellar characteristics.
+        </p>
+    </div>
+    
+</div>
+
+<style>
+    .analysis-block {
+        background-color: rgba(10, 10, 20, 0.9);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        color: #84d4ff;
+    }
+
+    .techy-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #e0e0e0;
+    }
+
+    .highlight {
+        color: #00ffc3;
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        font-weight: bold;
+    }
+</style>
+
 {% endblock %}

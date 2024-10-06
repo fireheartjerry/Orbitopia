@@ -19,10 +19,16 @@
         {% block preload %}{% endblock %}
     </head>
     <body>
-        <a class="btn btn-primary mt-3 position-sticky float-end" style="top: 10px; z-index: 100; margin-right: 10px;" href="/" id="homebtn">Back to Home</a>
+        <!-- Canvas for the sun graphic -->
+    
+        <a class="btn btn-info btn-lg mt-3 position-sticky float-end" style="top: 10px; z-index: 100; margin-right: 10px; font-family: 'Orbitron', sans-serif;" href="/" id="homebtn">Back to Home</a>
+        
         {% block main %}{% endblock %}
         {% block script %}{% endblock %}
+        
     </body>
+    
+    
     <script>
         rocket = document.querySelector('.rocket');
         rocket.style.left = rocket.dataset.pos + '%';

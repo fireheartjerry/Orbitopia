@@ -10,7 +10,6 @@ body {
 /* Game container styling */
 .game-container {
     max-width: 650px;
-    margin: 60px auto;
     padding: 30px;
     background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
     border-radius: 20px;

@@ -140,6 +140,18 @@
     .modal-backdrop {
         display: none;
     }
+
+    .galaxy {
+        content: "";
+        background-image: url("/static/galaxy_animation.svg");
+        background-repeat: no-repeat;
+        background-size: cover; /* Ensures the background scales properly */
+        display: inline-block;
+        width: 130px;
+        height: 130px;
+        margin-right: 15px;
+        vertical-align: middle;
+    }
 </style>
 
 <div>
@@ -149,28 +161,22 @@
 </div>
 
 <div class="align-items-center container-fluid" style="z-index: 3; position: absolute;">
-    <div class="align-items-center container-fluid mb-5">
-        <br><br><br>
-        <center class="overlay">
-            <!-- Typewriter effect container -->
-            <div class="typewriter">
-                <h1 class="fw-bold"></h1>
-            </div>
-            <h1 class="name" style="display:none;">Orbitopia</h1> <!-- Hidden original title -->
+    <div class="align-items-center container-fluid mb-3 mt-3">
+        <center class="overlay d-flex align-items-center justify-content-center">
+            <a class="galaxy" style="vertical-align: center;" target="_blank" href="https://eyes.nasa.gov/apps/exo/"></a>
+            <h1 class="name" style="font-size: 6em; vertical-align: center;">Orbitopia</h1>
         </center>
     </div>
+    
 
     <div class="d-flex flex-row align-items-start mt-3 apod-container">
-        <!-- APOD Image -->
         <img src="{{ apod['url'] }}" class="img-fluid apod-image" alt="Astronomy Picture of the Day">
         
-        <!-- APOD Info Section -->
         <div class="apod-info">
             <p class="apod-credit">Credit: {{ apod['copyright'] }}</p>
             <h4 class="apod-date">Date: {{ apod['date'] }}</h4>
             <h2 class="apod-title">Astronomy Photo of the Day &mdash; <b>{{ apod['title'] }}</b></h2>
             
-            <!-- Description Section with See More/See Less functionality -->
             <div id="apodDescContainer" class="apod-description-container">
                 <p id="apodDesc" class="apod-description">{{ apod['explanation'] }}</p>
             </div>
@@ -309,19 +315,19 @@
     </div>
 
     <div class="row mt-3">
-
-        <!-- Storymode Card -->
         <div class="col-lg">
             <div class="card bg-dark text-white p-3 t-card" style="border-radius: 10px; overflow: hidden;">
                 <div class="card-body">
-                    <h5 class="card-title">Storymode</h5>
+                    <h5 class="card-title">Search for Aliens</h5>
                     <p class="card-text">
-                        Visit 6 exoplanet systems on a spaceship!
+                        NASA Exoplanet Exploration Program.
                     </p>
-                    <a href="/story" class="btn btn-outline-info btn-lg mt-3">Start Storymode</a>
+                    <a href="#" class="btn btn-outline-info btn-lg mt-3">Find out More</a>
                 </div>
             </div>
         </div>
+        <!-- Storymode Card -->
+
 
         <!-- Exoplanet Discoveries -->
         <div class="col-lg">
@@ -363,6 +369,17 @@
     </div>
 
     <div class="row mt-3 mb-3">
+        <div class="col-lg">
+            <div class="card bg-dark text-white p-3 t-card" style="border-radius: 10px; overflow: hidden;">
+                <div class="card-body">
+                    <h5 class="card-title">Storymode</h5>
+                    <p class="card-text">
+                        Visit 6 exoplanet systems on a spaceship!
+                    </p>
+                    <a href="/story" class="btn btn-outline-info btn-lg mt-3">Start Storymode</a>
+                </div>
+            </div>
+        </div>
         <!-- Exoplanet Game Card -->
         <div class="col-lg">
             <div class="card bg-dark text-white p-3 t-card" style="border-radius: 10px; overflow: hidden;">
@@ -375,17 +392,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg">
-            <div class="card bg-dark text-white p-3 t-card" style="border-radius: 10px; overflow: hidden;">
-                <div class="card-body">
-                    <h5 class="card-title">Search for Aliens</h5>
-                    <p class="card-text">
-                        NASA Exoplanet Exploration Program.
-                    </p>
-                    <a href="game" class="btn btn-outline-info btn-lg mt-3">Find out More</a>
-                </div>
-            </div>
-        </div>
+
         <!-- Exoplanet Game Card -->
         <div class="col-lg">
             <div class="card bg-dark text-white p-3 t-card" style="border-radius: 10px; overflow: hidden;">
@@ -414,59 +421,23 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const nameElement = document.querySelector('.name');
-        const titleElement = document.querySelector('.typewriter h1');
-        const textArray = ["Welcome to...", "Orbitopia"];
-        let textIndex = 0;
-        let charIndex = 0;
-        let currentText = '';
-        
-        function typeText() {
-            if (charIndex < textArray[textIndex].length) {
-                currentText += textArray[textIndex].charAt(charIndex);
-                titleElement.innerHTML = `${currentText}<span class="caret"></span>`;
-                charIndex++;
-                setTimeout(typeText, 150);  // Adjust typing speed
-            } else if (textIndex < textArray.length - 1) {
-                setTimeout(() => {
-                    textIndex++;
-                    charIndex = 0;
-                    typeText();
-                }, 1000);  // Delay between texts
-            }
-        }
-        
-        typeText();  // Start typing
-    });
+<style>
+    .name {
+        font-size: 4rem; /* Large font size */
+        color: #00ccff; /* Bright color for text */
+        text-shadow: 0 0 10px #00ccff, 0 0 20px #00ffcc; /* Glowing effect */
+        animation: glow 1.5s infinite alternate; /* Animation for a glowing effect */
+    }
     
-    document.addEventListener('DOMContentLoaded', function () {
-        // Typewriter effect for title
-        const titleElement = document.querySelector('.typewriter h1');
-        const textArray = ["Welcome to...", "Orbitopia"];
-        let textIndex = 0;
-        let charIndex = 0;
-        let currentText = '';
-        
-        function typeText() {
-            if (charIndex < textArray[textIndex].length) {
-                currentText += textArray[textIndex].charAt(charIndex);
-                titleElement.innerHTML = `${currentText}<span class="caret"></span>`;
-                charIndex++;
-                setTimeout(typeText, 150);  // Adjust typing speed
-            } else if (textIndex < textArray.length - 1) {
-                setTimeout(() => {
-                    textIndex++;
-                    charIndex = 0;
-                    typeText();
-                }, 1000);  // Delay between texts
-            }
+    /* Glowing animation */
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 8px #00ccff, 0 0 20px #00ffcc;
         }
-        
-        typeText();  // Start typing
-
-        
-    });
-</script>
+        100% {
+            text-shadow: 0 0 13px #00ffcc, 0 0 30px #00ffcc;
+        }
+    }
+    
+</style>
 {% endblock %}

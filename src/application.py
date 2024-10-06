@@ -66,6 +66,10 @@ def map():
 def starmap():
     return render_template('starmap.html')
 
+@app.route('/aliens')
+def aliens():
+    return render_template("aliens.html")
+
 @app.route('/game', methods=['GET', 'POST'])
 def game():
     # Initialize session data if not present

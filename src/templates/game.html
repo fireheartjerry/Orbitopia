@@ -1,9 +1,11 @@
+{% extends "layout.html" %}
+
+{% block main %}
 <link rel="stylesheet" href="/static/games.css">
 
 <style>
-    /* Body background */
     body {
-        background-image: url("/static/gamebg.jpg");
+        background-image: url("/static/rules.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -19,6 +21,7 @@
         width: 100%;
         max-width: 600px;
         text-align: center;
+        opacity: 0.8;
     }
 
     h2 {
@@ -52,7 +55,7 @@
 
     /* Style for selected radio option */
     .radio-option.selected {
-        background: rgba(0, 191, 255, 0.7);
+        background: rgba(0, 191, 255);
         color: white;
         border-color: #00ffc3;
         box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
@@ -111,14 +114,14 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.9);
         color: #fff;
+        background-color: rgba(0, 0, 0, 0.95) !important;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         z-index: 1000;
         display: none; /* Initially hidden */
+        align-items: center;
+        justify-content: center;
     }
 
     #overlay h2 {
@@ -130,17 +133,15 @@
     }
 </style>
 
-<div id="overlay">
-    <center>
-    <h2>Game Rules</h2>
-    <div class="card">
-        <p style="max-width: 500px;">Welcome to the Exoplanet Guessing Game! Think of one of the following celestial bodies: The Sun, Solar Flares, Black Holes, Earth. Next, our intelligent AI system called HAL-10000 will ask you several questions, in which you must answer "YES" or "NO". The AI will then read your mind!</p>
-    </div>
-    <button class="btn submit-btn" id="start-button">OK</button>
-    </center>
+<div id="overlay" style="background-image: url('/static/gamebg.jpg')">
+    <center style="z-index: 5;"><div class="card" style="width: 500px;">
+        <h2>Game Rules</h2>
+        <div class="lead">Welcome to the Exoplanet Guessing Game! Think of one of the following celestial bodies: The Sun, Solar Flares, Black Holes, Earth. Next, our intelligent AI system called HAL-10000 will ask you several questions, in which you must answer "YES" or "NO". The AI will then read your mind!</div>
+        <button class="btn submit-btn" id="start-button">OK</button>
+    </div></center>
 </div>
 
-<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+<div class="container d-flex align-items-center justify-content-center">
     <div class="game-container">
         {% if result %}
             <!-- Show result if the game is finished -->
@@ -155,11 +156,11 @@
             <form action="{{ url_for('game') }}" method="get" onsubmit="return validateForm()">
                 <input type="hidden" name="question" value="{{ question }}">
                 <div class="options">
-                    <label class="radio-option">
-                        <input type="radio" name="answer" value="1"> Yes
+                    <label class="radio-option fw-bold">
+                        <input type="radio" name="answer" value="1"><b> Yes</b>
                     </label>
-                    <label class="radio-option">
-                        <input type="radio" name="answer" value="0"> No
+                    <label class="radio-option fw-bold">
+                        <input type="radio" name="answer" value="0"><b> No</b>
                     </label>
                 </div>
                 <button type="submit" class="btn submit-btn">Submit Answer</button>
@@ -231,3 +232,4 @@
         }
     }
 </script>
+{% endblock %}
