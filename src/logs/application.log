@@ -638,3 +638,579 @@ jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was loo
 2024-10-06 17:15:04,185 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
 2024-10-06 17:15:04,678 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
 2024-10-06 17:15:05,041 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:15:45,210 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:15:45,579 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:17:04,083 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:17:04,516 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:17:55,240 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:17:55,686 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:18:53,251 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:18:53,552 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:19:17,373 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:19:17,737 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:20:10,593 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:20:10,876 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:21:11,188 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 106, in game
+    return render_template('game.html', question=next_question, question_text=questions[next_question])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Orbitopia/src/templates/game.html", line 146, in template
+    {% result %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'result'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2024-10-06 17:21:15,213 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:21:15,586 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:21:41,301 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:21:41,679 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:22:22,593 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 106, in game
+    return render_template('game.html', question=next_question, question_text=questions[next_question], session=session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Orbitopia/src/templates/game.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/templates/layout.html", line 26, in top-level template code
+    {% block main %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/templates/game.html", line 138, in block 'main'
+    {% if len(session['questions_so_far']) == 0 %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'len' is undefined
+2024-10-06 17:22:23,564 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 106, in game
+    return render_template('game.html', question=next_question, question_text=questions[next_question], session=session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Orbitopia/src/templates/game.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/templates/layout.html", line 26, in top-level template code
+    {% block main %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/templates/game.html", line 138, in block 'main'
+    {% if len(session['questions_so_far']) == 0 %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'len' is undefined
+2024-10-06 17:22:31,853 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:22:32,231 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:23:06,815 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:23:07,205 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:23:07,381 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:23:07,767 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:23:17,031 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:23:17,402 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+[2024-10-06 17:23:28 +0000] [2835388] [INFO] Worker exiting (pid: 2835388)
+[2024-10-06 17:23:28 +0000] [2835389] [INFO] Worker exiting (pid: 2835389)
+[2024-10-06 17:23:28 +0000] [2835387] [INFO] Worker exiting (pid: 2835387)
+[2024-10-06 17:23:28 +0000] [2835384] [INFO] Handling signal: term
+[2024-10-06 17:23:29 +0000] [2835384] [ERROR] Worker (pid:2835388) was sent SIGTERM!
+[2024-10-06 17:23:29 +0000] [2835384] [ERROR] Worker (pid:2835389) was sent SIGTERM!
+[2024-10-06 17:23:29 +0000] [2835384] [ERROR] Worker (pid:2835387) was sent SIGTERM!
+[2024-10-06 17:23:29 +0000] [2835384] [INFO] Shutting down: Master
+[2024-10-06 17:23:30 +0000] [3173583] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:23:30 +0000] [3173583] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3173583)
+[2024-10-06 17:23:30 +0000] [3173583] [INFO] Using worker: sync
+[2024-10-06 17:23:30 +0000] [3173627] [INFO] Booting worker with pid: 3173627
+[2024-10-06 17:23:30 +0000] [3173631] [INFO] Booting worker with pid: 3173631
+[2024-10-06 17:23:30 +0000] [3173639] [INFO] Booting worker with pid: 3173639
+2024-10-06 17:23:58,746 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:23:59,072 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:24:04,865 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:24:05,191 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:24:50,579 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:24:50,912 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:25:14,264 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:25:14,625 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:25:15,631 ERROR application MainThread : Exception on /sungame [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 67, in sungame
+    return render_template('sungame.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sungame.html
+2024-10-06 17:25:18,372 ERROR application MainThread : Exception on /sungame [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 67, in sungame
+    return render_template('sungame.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sungame.html
+2024-10-06 17:25:31,936 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:25:32,306 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:26:06,938 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:26:07,255 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:26:15,408 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:26:15,785 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:26:17,261 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:26:17,605 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:29:39,300 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:29:39,646 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:29:43,603 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:29:43,932 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+[2024-10-06 17:29:49 +0000] [3173583] [INFO] Handling signal: term
+[2024-10-06 17:29:49 +0000] [3173631] [INFO] Worker exiting (pid: 3173631)
+[2024-10-06 17:29:49 +0000] [3173639] [INFO] Worker exiting (pid: 3173639)
+[2024-10-06 17:29:49 +0000] [3173627] [INFO] Worker exiting (pid: 3173627)
+[2024-10-06 17:29:49 +0000] [3173583] [ERROR] Worker (pid:3173631) was sent SIGTERM!
+[2024-10-06 17:29:49 +0000] [3173583] [ERROR] Worker (pid:3173627) was sent SIGTERM!
+[2024-10-06 17:29:49 +0000] [3173583] [ERROR] Worker (pid:3173639) was sent SIGTERM!
+[2024-10-06 17:29:49 +0000] [3173583] [INFO] Shutting down: Master
+[2024-10-06 17:29:49 +0000] [3196871] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:29:49 +0000] [3196871] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3196871)
+[2024-10-06 17:29:49 +0000] [3196871] [INFO] Using worker: sync
+[2024-10-06 17:29:49 +0000] [3196874] [INFO] Booting worker with pid: 3196874
+[2024-10-06 17:29:49 +0000] [3196875] [INFO] Booting worker with pid: 3196875
+[2024-10-06 17:29:49 +0000] [3196876] [INFO] Booting worker with pid: 3196876
+2024-10-06 17:29:51,318 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:29:51,751 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:29:52,906 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 104, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+[2024-10-06 17:30:16 +0000] [3196871] [INFO] Handling signal: term
+[2024-10-06 17:30:16 +0000] [3196874] [INFO] Worker exiting (pid: 3196874)
+[2024-10-06 17:30:16 +0000] [3196875] [INFO] Worker exiting (pid: 3196875)
+[2024-10-06 17:30:16 +0000] [3196876] [INFO] Worker exiting (pid: 3196876)
+[2024-10-06 17:30:16 +0000] [3196871] [ERROR] Worker (pid:3196876) was sent SIGTERM!
+[2024-10-06 17:30:16 +0000] [3196871] [ERROR] Worker (pid:3196875) was sent SIGTERM!
+[2024-10-06 17:30:16 +0000] [3196871] [INFO] Shutting down: Master
+[2024-10-06 17:30:17 +0000] [3198692] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:30:17 +0000] [3198692] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3198692)
+[2024-10-06 17:30:17 +0000] [3198692] [INFO] Using worker: sync
+[2024-10-06 17:30:17 +0000] [3198697] [INFO] Booting worker with pid: 3198697
+[2024-10-06 17:30:17 +0000] [3198698] [INFO] Booting worker with pid: 3198698
+[2024-10-06 17:30:17 +0000] [3198699] [INFO] Booting worker with pid: 3198699
+2024-10-06 17:30:18,310 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 105, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+2024-10-06 17:30:19,223 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 105, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+2024-10-06 17:30:19,843 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 105, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+2024-10-06 17:30:21,178 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:30:21,587 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:30:22,571 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 105, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+[2024-10-06 17:30:58 +0000] [3198692] [INFO] Handling signal: term
+[2024-10-06 17:30:58 +0000] [3198697] [INFO] Worker exiting (pid: 3198697)
+[2024-10-06 17:30:58 +0000] [3198698] [INFO] Worker exiting (pid: 3198698)
+[2024-10-06 17:30:58 +0000] [3198699] [INFO] Worker exiting (pid: 3198699)
+[2024-10-06 17:30:58 +0000] [3198692] [ERROR] Worker (pid:3198698) was sent SIGTERM!
+[2024-10-06 17:30:58 +0000] [3198692] [ERROR] Worker (pid:3198699) was sent SIGTERM!
+[2024-10-06 17:30:58 +0000] [3198692] [ERROR] Worker (pid:3198697) was sent SIGTERM!
+[2024-10-06 17:30:58 +0000] [3198692] [INFO] Shutting down: Master
+[2024-10-06 17:30:59 +0000] [3201124] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:30:59 +0000] [3201124] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3201124)
+[2024-10-06 17:30:59 +0000] [3201124] [INFO] Using worker: sync
+[2024-10-06 17:30:59 +0000] [3201126] [INFO] Booting worker with pid: 3201126
+[2024-10-06 17:30:59 +0000] [3201127] [INFO] Booting worker with pid: 3201127
+[2024-10-06 17:30:59 +0000] [3201128] [INFO] Booting worker with pid: 3201128
+2024-10-06 17:31:00,078 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 97, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+2024-10-06 17:31:02,100 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:31:02,524 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:31:04,205 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 97, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+[2024-10-06 17:31:18 +0000] [3201124] [INFO] Handling signal: term
+[2024-10-06 17:31:18 +0000] [3201126] [INFO] Worker exiting (pid: 3201126)
+[2024-10-06 17:31:18 +0000] [3201127] [INFO] Worker exiting (pid: 3201127)
+[2024-10-06 17:31:18 +0000] [3201128] [INFO] Worker exiting (pid: 3201128)
+[2024-10-06 17:31:18 +0000] [3201124] [ERROR] Worker (pid:3201126) was sent SIGTERM!
+[2024-10-06 17:31:18 +0000] [3201124] [ERROR] Worker (pid:3201127) was sent SIGTERM!
+[2024-10-06 17:31:18 +0000] [3201124] [INFO] Shutting down: Master
+[2024-10-06 17:31:18 +0000] [3202579] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:31:18 +0000] [3202579] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3202579)
+[2024-10-06 17:31:18 +0000] [3202579] [INFO] Using worker: sync
+[2024-10-06 17:31:18 +0000] [3202585] [INFO] Booting worker with pid: 3202585
+[2024-10-06 17:31:18 +0000] [3202586] [INFO] Booting worker with pid: 3202586
+[2024-10-06 17:31:18 +0000] [3202587] [INFO] Booting worker with pid: 3202587
+2024-10-06 17:31:20,547 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:31:20,891 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 98, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+2024-10-06 17:31:20,913 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:31:21,964 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 98, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+2024-10-06 17:31:23,181 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:31:23,514 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:31:24,578 ERROR application MainThread : Exception on /game [GET]
+Traceback (most recent call last):
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/src/application.py", line 98, in game
+    probabilities = calculate_probabilities(session['questions_so_far'], session['answers_so_far'])
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Orbitopia/.venv/lib/python3.11/site-packages/flask/sessions.py", line 84, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'questions_so_far'
+[2024-10-06 17:31:56 +0000] [3202579] [INFO] Handling signal: term
+[2024-10-06 17:31:56 +0000] [3202585] [INFO] Worker exiting (pid: 3202585)
+[2024-10-06 17:31:56 +0000] [3202586] [INFO] Worker exiting (pid: 3202586)
+[2024-10-06 17:31:56 +0000] [3202587] [INFO] Worker exiting (pid: 3202587)
+[2024-10-06 17:31:56 +0000] [3202579] [ERROR] Worker (pid:3202585) was sent SIGTERM!
+[2024-10-06 17:31:56 +0000] [3202579] [ERROR] Worker (pid:3202586) was sent SIGTERM!
+[2024-10-06 17:31:56 +0000] [3202579] [ERROR] Worker (pid:3202587) was sent SIGTERM!
+[2024-10-06 17:31:56 +0000] [3202579] [INFO] Shutting down: Master
+[2024-10-06 17:31:56 +0000] [3204796] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:31:56 +0000] [3204796] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3204796)
+[2024-10-06 17:31:56 +0000] [3204796] [INFO] Using worker: sync
+[2024-10-06 17:31:56 +0000] [3204798] [INFO] Booting worker with pid: 3204798
+[2024-10-06 17:31:56 +0000] [3204799] [INFO] Booting worker with pid: 3204799
+[2024-10-06 17:31:56 +0000] [3204800] [INFO] Booting worker with pid: 3204800
+[2024-10-06 17:32:11 +0000] [3204796] [INFO] Handling signal: term
+[2024-10-06 17:32:11 +0000] [3204799] [INFO] Worker exiting (pid: 3204799)
+[2024-10-06 17:32:11 +0000] [3204798] [INFO] Worker exiting (pid: 3204798)
+[2024-10-06 17:32:11 +0000] [3204800] [INFO] Worker exiting (pid: 3204800)
+[2024-10-06 17:32:12 +0000] [3204796] [INFO] Shutting down: Master
+[2024-10-06 17:32:12 +0000] [3206047] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:32:12 +0000] [3206047] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3206047)
+[2024-10-06 17:32:12 +0000] [3206047] [INFO] Using worker: sync
+[2024-10-06 17:32:12 +0000] [3206086] [INFO] Booting worker with pid: 3206086
+[2024-10-06 17:32:12 +0000] [3206087] [INFO] Booting worker with pid: 3206087
+[2024-10-06 17:32:12 +0000] [3206088] [INFO] Booting worker with pid: 3206088
+2024-10-06 17:34:16,066 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:34:16,448 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+[2024-10-06 17:34:52 +0000] [3206047] [INFO] Handling signal: term
+[2024-10-06 17:34:52 +0000] [3206088] [INFO] Worker exiting (pid: 3206088)
+[2024-10-06 17:34:52 +0000] [3206086] [INFO] Worker exiting (pid: 3206086)
+[2024-10-06 17:34:52 +0000] [3206087] [INFO] Worker exiting (pid: 3206087)
+[2024-10-06 17:34:52 +0000] [3206047] [ERROR] Worker (pid:3206088) was sent SIGTERM!
+[2024-10-06 17:34:52 +0000] [3206047] [ERROR] Worker (pid:3206087) was sent SIGTERM!
+[2024-10-06 17:34:52 +0000] [3206047] [ERROR] Worker (pid:3206086) was sent SIGTERM!
+[2024-10-06 17:34:52 +0000] [3206047] [INFO] Shutting down: Master
+[2024-10-06 17:34:52 +0000] [3215542] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 17:34:52 +0000] [3215542] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (3215542)
+[2024-10-06 17:34:52 +0000] [3215542] [INFO] Using worker: sync
+[2024-10-06 17:34:52 +0000] [3215544] [INFO] Booting worker with pid: 3215544
+[2024-10-06 17:34:53 +0000] [3215545] [INFO] Booting worker with pid: 3215545
+[2024-10-06 17:34:53 +0000] [3215546] [INFO] Booting worker with pid: 3215546
+2024-10-06 17:34:56,340 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:34:56,768 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:35:18,427 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:35:18,811 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:35:29,019 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:35:29,358 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:35:37,264 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:35:37,608 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None

@@ -72,6 +72,13 @@ def sun():
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
+    # Check if it's the user's first visit
+    if 'first_visit' not in session:
+        session['first_visit'] = True  # Mark as first-time visit
+        first_time = True
+    else:
+        first_time = False  # Not the first-time visit
+
     # Initialize session data if not present
     if 'questions_so_far' not in session:
         session['questions_so_far'] = []
@@ -99,11 +106,17 @@ def game():
     if len(questions_left) == 0:
         # Return the most probable character
         result = probabilities[0]
-        return render_template('game.html', result=result['name'])
+        return render_template('game.html', result=result['name'], session=session, first=first_time)
     else:
         # Ask another question
         next_question = random.choice(questions_left)
-        return render_template('game.html', question=next_question, question_text=questions[next_question])
+        return render_template('game.html', question=next_question, question_text=questions[next_question], session=session, first=first_time)
+    
+@app.route('/quitgame')
+def quit():
+    session.clear()
+    return redirect("/")
+
 
 @app.route('/reset')
 def reset():
