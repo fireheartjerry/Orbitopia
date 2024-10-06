@@ -1,0 +1,79 @@
+[2024-10-06 02:53:59 +0000] [4174348] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 02:53:59 +0000] [4174348] [INFO] Listening at: unix:/Orbitopia/Orbitopia.sock (4174348)
+[2024-10-06 02:53:59 +0000] [4174348] [INFO] Using worker: sync
+[2024-10-06 02:53:59 +0000] [4174350] [INFO] Booting worker with pid: 4174350
+[2024-10-06 02:53:59 +0000] [4174351] [INFO] Booting worker with pid: 4174351
+[2024-10-06 02:53:59 +0000] [4174352] [INFO] Booting worker with pid: 4174352
+[2024-10-06 02:55:43 +0000] [4174348] [INFO] Handling signal: term
+[2024-10-06 02:55:43 +0000] [4174350] [INFO] Worker exiting (pid: 4174350)
+[2024-10-06 02:55:43 +0000] [4174351] [INFO] Worker exiting (pid: 4174351)
+[2024-10-06 02:55:43 +0000] [4174352] [INFO] Worker exiting (pid: 4174352)
+[2024-10-06 02:55:43 +0000] [4174348] [ERROR] Worker (pid:4174350) was sent SIGTERM!
+[2024-10-06 02:55:43 +0000] [4174348] [ERROR] Worker (pid:4174351) was sent SIGTERM!
+[2024-10-06 02:55:43 +0000] [4174348] [ERROR] Worker (pid:4174352) was sent SIGTERM!
+[2024-10-06 02:55:43 +0000] [4174348] [INFO] Shutting down: Master
+[2024-10-06 02:55:43 +0000] [4180985] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 02:55:43 +0000] [4180985] [INFO] Listening at: unix:/Orbitopia/Orbitopia.sock (4180985)
+[2024-10-06 02:55:43 +0000] [4180985] [INFO] Using worker: sync
+[2024-10-06 02:55:43 +0000] [4180987] [INFO] Booting worker with pid: 4180987
+[2024-10-06 02:55:43 +0000] [4180988] [INFO] Booting worker with pid: 4180988
+[2024-10-06 02:55:43 +0000] [4180989] [INFO] Booting worker with pid: 4180989
+[2024-10-06 02:56:21 +0000] [4180985] [INFO] Handling signal: term
+[2024-10-06 02:56:21 +0000] [4180987] [INFO] Worker exiting (pid: 4180987)
+[2024-10-06 02:56:21 +0000] [4180989] [INFO] Worker exiting (pid: 4180989)
+[2024-10-06 02:56:21 +0000] [4180988] [INFO] Worker exiting (pid: 4180988)
+[2024-10-06 02:56:21 +0000] [4180985] [INFO] Shutting down: Master
+[2024-10-06 02:57:16 +0000] [4186909] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 02:57:16 +0000] [4186909] [INFO] Listening at: unix:/Orbitopia/Orbitopia.sock (4186909)
+[2024-10-06 02:57:16 +0000] [4186909] [INFO] Using worker: sync
+[2024-10-06 02:57:16 +0000] [4186911] [INFO] Booting worker with pid: 4186911
+[2024-10-06 02:57:16 +0000] [4186912] [INFO] Booting worker with pid: 4186912
+[2024-10-06 02:57:16 +0000] [4186913] [INFO] Booting worker with pid: 4186913
+[2024-10-06 02:59:38 +0000] [4186909] [INFO] Handling signal: term
+[2024-10-06 02:59:38 +0000] [4186911] [INFO] Worker exiting (pid: 4186911)
+[2024-10-06 02:59:38 +0000] [4186912] [INFO] Worker exiting (pid: 4186912)
+[2024-10-06 02:59:38 +0000] [4186913] [INFO] Worker exiting (pid: 4186913)
+[2024-10-06 02:59:38 +0000] [4186909] [ERROR] Worker (pid:4186912) was sent SIGTERM!
+[2024-10-06 02:59:38 +0000] [4186909] [ERROR] Worker (pid:4186913) was sent SIGTERM!
+[2024-10-06 02:59:38 +0000] [4186909] [INFO] Shutting down: Master
+[2024-10-06 02:59:39 +0000] [1676] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 02:59:39 +0000] [1676] [INFO] Listening at: unix:/Orbitopia/Orbitopia.sock (1676)
+[2024-10-06 02:59:39 +0000] [1676] [INFO] Using worker: sync
+[2024-10-06 02:59:39 +0000] [1679] [INFO] Booting worker with pid: 1679
+[2024-10-06 02:59:39 +0000] [1680] [INFO] Booting worker with pid: 1680
+[2024-10-06 02:59:39 +0000] [1681] [INFO] Booting worker with pid: 1681
+[2024-10-06 03:00:27 +0000] [1676] [INFO] Handling signal: term
+[2024-10-06 03:00:27 +0000] [1680] [INFO] Worker exiting (pid: 1680)
+[2024-10-06 03:00:27 +0000] [1681] [INFO] Worker exiting (pid: 1681)
+[2024-10-06 03:00:27 +0000] [1679] [INFO] Worker exiting (pid: 1679)
+[2024-10-06 03:00:27 +0000] [1676] [ERROR] Worker (pid:1680) was sent SIGTERM!
+[2024-10-06 03:00:27 +0000] [1676] [ERROR] Worker (pid:1681) was sent SIGTERM!
+[2024-10-06 03:00:28 +0000] [1676] [INFO] Shutting down: Master
+[2024-10-06 03:00:28 +0000] [5023] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 03:00:28 +0000] [5023] [INFO] Listening at: unix:/Orbitopia/Orbitopia.sock (5023)
+[2024-10-06 03:00:28 +0000] [5023] [INFO] Using worker: sync
+[2024-10-06 03:00:28 +0000] [5090] [INFO] Booting worker with pid: 5090
+[2024-10-06 03:00:28 +0000] [5100] [INFO] Booting worker with pid: 5100
+[2024-10-06 03:00:28 +0000] [5111] [INFO] Booting worker with pid: 5111
+[2024-10-06 03:02:43 +0000] [5023] [INFO] Handling signal: term
+[2024-10-06 03:02:43 +0000] [5100] [INFO] Worker exiting (pid: 5100)
+[2024-10-06 03:02:43 +0000] [5111] [INFO] Worker exiting (pid: 5111)
+[2024-10-06 03:02:43 +0000] [5090] [INFO] Worker exiting (pid: 5090)
+[2024-10-06 03:02:43 +0000] [13300] [INFO] Starting gunicorn 23.0.0
+[2024-10-06 03:02:43 +0000] [13300] [INFO] Listening at: unix:/Orbitopia/orbitopia.sock (13300)
+[2024-10-06 03:02:43 +0000] [13300] [INFO] Using worker: sync
+[2024-10-06 03:02:43 +0000] [13378] [INFO] Booting worker with pid: 13378
+[2024-10-06 03:02:43 +0000] [13384] [INFO] Booting worker with pid: 13384
+[2024-10-06 03:02:43 +0000] [13385] [INFO] Booting worker with pid: 13385
+2024-10-06 03:02:45,648 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 03:02:46,027 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 03:03:23,733 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 03:03:24,133 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 03:03:33,231 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 03:03:33,596 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 03:03:35,549 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 03:03:35,935 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 03:04:10,472 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 03:04:10,912 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 03:04:33,352 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 03:04:33,774 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None

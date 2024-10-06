@@ -3,13 +3,30 @@ import os
 import random
 import requests
 from pprint import pprint
+import logging
 
 app = Flask(__name__)
 
 # Load the secret key from an environment variable for production, with a fallback for development
-app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'your_development_fallback_key')
-
 API_KEY = "ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT"
+
+app.config.from_object('settings')
+
+LOG_HANDLER = logging.FileHandler(app.config['LOGGING_FILE_LOCATION'])
+LOG_HANDLER.setFormatter(
+    logging.Formatter(fmt="[TOPSOJ] [{section}] [{levelname}] [{asctime}] {message}",
+                      style='{'))
+logger = logging.getLogger("TOPSOJ")
+logger.addHandler(LOG_HANDLER)
+logger.propagate = False
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+logging.basicConfig(
+    filename=app.config['LOGGING_FILE_LOCATION'],
+    level=logging.DEBUG,
+    format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s',
+)
+logging.getLogger().addHandler(logging.StreamHandler())
 
 # Game questions and character data about the Sun
 questions = {
