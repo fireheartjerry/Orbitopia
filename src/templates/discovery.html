@@ -4,4 +4,140 @@
 
 {% block main %}
 
+<style>
+    body {
+        background-image: url("/static/discoverybg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<div class="container mt-5">
+    <h1>How We Find and Study Exoplanets</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <p class="lead" style="color: white!important;">
+                Exoplanets are planets that orbit stars outside of our solar system. Since the first confirmed discovery in 1995, astronomers have developed several methods to find and study these distant worlds. Many exoplanets have been found using different techniques, revealing that small planets are quite common in our galaxy.
+            </p>
+        </div>
+
+        <div class="col-md-12 mt-5">
+            <h2>Key Discovery Methods</h2>
+
+            <div class="row">
+                <!-- Method 1: Radial Velocity -->
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Radial Velocity: Reading the Wobble</h5>
+                            <p class="card-text lead" style="color: white!important;">
+                                This method measures the gravitational tug that a planet exerts on its star, causing the star to wobble. The change in the star's light, or "radial velocity," is tracked to infer the presence of a planet. It was used to discover 51 Pegasi b, the first exoplanet around a Sun-like star in 1995.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 2: Transit Method -->
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Transits: Planets Found in Dips in Light</h5>
+                            <p class="card-text lead" style="color: white!important;">
+                                When a planet passes in front of its star, it causes a small dip in the star’s brightness. The Kepler Space Telescope revolutionized planet hunting with this method, observing the dimming of stars as planets transit them.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 3: Transit Spectroscopy -->
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Transit Spectroscopy: Reading the Light</h5>
+                            <p class="card-text lead" style="color: white!important;">
+                                By capturing starlight as it passes through a planet’s atmosphere during transit, scientists can study the atmospheric composition. The James Webb Space Telescope is expected to provide new insights using this technique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 4: Gravitational Microlensing -->
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Gravitational Microlensing</h5>
+                            <p class="card-text lead" style="color: white!important;">
+                                This method uses the gravitational field of a star to bend and magnify light from a background object. If a planet is orbiting the star, it creates a temporary brightness spike, revealing the planet’s existence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 5: Direct Imaging -->
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">The Rise of Direct Imaging</h5>
+                            <p class="card-text lead" style="color: white!important;">
+                                Direct imaging involves taking pictures of exoplanets by blocking out the overwhelming glare of their host stars. Although challenging, this method provides direct visuals and atmospheric profiles of planets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 6: Coronagraph -->
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Coronagraph</h5>
+                            <p class="card-text lead" style="color: white!important;">
+                                A coronagraph is an instrument that blocks the light of a star to directly view planets around it. It’s a promising technology for future space telescopes, such as the Nancy Grace Roman Space Telescope.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 7: Starshade -->
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Starshade</h5>
+                            <p class="card-text lead" style="color: white!important;">
+                                A starshade is a sunflower-shaped spacecraft that blocks starlight before it reaches a telescope, allowing for the detection of planets. It’s a concept being developed for future missions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional content: Kepler's discovery -->
+        <div class="col-md-12 mt-5">
+            <h2>A Galaxy Full of Planets</h2>
+            <p style="color: white!important;">
+                According to data from the Kepler Space Telescope, there are more planets than stars in our galaxy—over a trillion planets. Many of these planets are similar in size to Earth. As MIT professor Sara Seager said, “They’re everywhere.”
+            </p>
+        </div>
+
+        <!-- Future research -->
+        <div class="col-md-12 mt-5">
+            <h2>Future of Exoplanet Research</h2>
+            <ul class="list-group">
+                <li class="list-group-item bg-dark text-light">Upcoming missions like the James Webb Space Telescope will help scientists explore the atmospheres of distant planets and look for signs of life.</li>
+                <li class="list-group-item bg-dark text-light">Techniques like transit spectroscopy and direct imaging will continue to play a major role in characterizing exoplanets.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

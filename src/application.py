@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
 import random
+import requests
+from pprint import pprint
 
 app = Flask(__name__)
 
 # Load the secret key from an environment variable for production, with a fallback for development
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'your_development_fallback_key')
+
+API_KEY = "ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT"
 
 # Game questions and character data about the Sun
 questions = {
@@ -26,11 +30,24 @@ characters = [
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    apod = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}").json()
+    return render_template('index.html', apod=apod)
 
 @app.route('/story')
 def storymode():
     return render_template('story/storymode.html')
+
+@app.route('/graphs')
+def graphs():
+    return render_template('graphs.html')
+
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
+@app.route('/starmap')
+def starmap():
+    return render_template('starmap.html')
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
@@ -156,7 +173,73 @@ def discovery():
 
 @app.route('/resources')
 def resources():
-    return render_template('resources.html')
+    links = [
+        {
+            "description": {
+                "title": "NASA - Homepage",
+                "summary": "Explore NASA’s official site for the latest in space exploration, missions, and science."
+            },
+            "link": "https://www.nasa.gov/"
+        },
+        {
+            "description": {
+                "title": "NASA - Exoplanets",
+                "summary": "Learn about exoplanets, their discoveries, and the science behind finding worlds beyond our solar system."
+            },
+            "link": "https://science.nasa.gov/exoplanets/"
+        },
+        {
+            "description": {
+                "title": "Exoplanet Discoveries Dashboard",
+                "summary": "Explore the latest exoplanet discoveries, statistics, and mission data using NASA’s Discoveries Dashboard."
+            },
+            "link": "https://science.nasa.gov/exoplanets/discoveries-dashboard/"
+        },
+        {
+            "description": {
+                "title": "NASA Exoplanet Archive",
+                "summary": "A comprehensive archive hosted by Caltech containing data on confirmed exoplanets, candidate exoplanets, and more."
+            },
+            "link": "https://exoplanetarchive.ipac.caltech.edu/index.html"
+        },
+        {
+            "description": {
+                "title": "NASA - Exoplanet Facts",
+                "summary": "Discover fascinating facts and figures about exoplanets and the search for life beyond Earth."
+            },
+            "link": "https://science.nasa.gov/exoplanets/facts/"
+        },
+        {
+            "description": {
+                "title": "Types of Exoplanets",
+                "summary": "Learn about the various types of exoplanets discovered, from gas giants to Earth-like rocky worlds."
+            },
+            "link": "https://science.nasa.gov/exoplanets/planet-types/"
+        },
+        {
+            "description": {
+                "title": "Exoplanet Watch - NASA",
+                "summary": "Discover how NASA’s Exoplanet Watch helps amateur astronomers participate in planetary science."
+            },
+            "link": "https://exoplanets.nasa.gov/exoplanet-watch/about-exoplanet-watch/overview/"
+        },
+        {
+            "description": {
+                "title": "Strange New Worlds - NASA",
+                "summary": "Immerse yourself in NASA’s 3D experiences to explore newly discovered, strange exoplanets."
+            },
+            "link": "https://science.nasa.gov/exoplanets/immersive/strange-new-worlds/"
+        },
+        {
+            "description": {
+                "title": "NASA - Exoplanet Catalog",
+                "summary": "This exoplanetary encyclopedia offers interactive 3D models and data on over 5,600 confirmed exoplanets, with filters for type, discovery method, and the mission or facility that found them."
+            },
+            "link": "https://science.nasa.gov/exoplanets/exoplanet-catalog/"
+        }
+    ]
+
+    return render_template('resources.html', links=links)
 
 # Calculate the probabilities for all characters based on given answers
 def calculate_probabilities(questions_so_far, answers_so_far):

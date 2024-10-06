@@ -1,18 +1,144 @@
-{% extends "layout.html" %}
-
-{% block title %}Exoplanet Game{% endblock %}
-
-{% block main %}
 <link rel="stylesheet" href="/static/games.css">
 
 <style>
+    /* Body background */
     body {
         background-image: url("/static/gamebg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        color: #ffffff;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .game-container {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(84, 212, 255, 0.3);
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    h2 {
+        color: #e0b3ff;
+        text-shadow: 0 0 8px rgba(255, 0, 150, 0.7);
+        margin-bottom: 30px;
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+
+    .radio-option {
+        background: rgba(84, 212, 255, 0.1);
+        border: 2px solid rgba(84, 212, 255, 0.6);
+        padding: 15px 30px;
+        border-radius: 10px;
+        color: #84d4ff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 45%;
+        text-align: center;
+    }
+
+    .radio-option:hover {
+        background: rgba(84, 212, 255, 0.2);
+        box-shadow: 0 0 15px rgba(84, 212, 255, 0.8);
+    }
+
+    /* Style for selected radio option */
+    .radio-option.selected {
+        background: rgba(0, 191, 255, 0.7);
+        color: white;
+        border-color: #00ffc3;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 15px 30px;
+        border-radius: 10px;
+        border: none;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .submit-btn {
+        background: linear-gradient(135deg, #00ffc3, #ff00a5);
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+    }
+
+    .submit-btn:hover {
+        background: linear-gradient(135deg, #ff00a5, #00ffc3);
+        box-shadow: 0 10px 30px rgba(0, 255, 255, 0.7);
+        transform: translateY(-2px);
+    }
+
+    .quit-btn {
+        background: rgba(255, 0, 86, 0.6);
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(255, 0, 86, 0.4);
+    }
+
+    .quit-btn:hover {
+        background: rgba(255, 0, 86, 0.8);
+        box-shadow: 0 10px 20px rgba(255, 0, 86, 0.7);
+        transform: translateY(-2px);
+    }
+
+    /* Error Message Styling */
+    #error-message {
+        color: #ff4d4d;
+        margin-top: 10px;
+        font-weight: bold;
+        display: none;
+    }
+
+    /* Overlay Styling */
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none; /* Initially hidden */
+    }
+
+    #overlay h2 {
+        margin-bottom: 20px;
+    }
+
+    #overlay .btn {
+        background: rgba(84, 212, 255, 0.6);
     }
 </style>
+
+<div id="overlay">
+    <center>
+    <h2>Game Rules</h2>
+    <div class="card">
+        <p style="max-width: 500px;">Welcome to the Exoplanet Guessing Game! Think of one of the following celestial bodies: The Sun, Solar Flares, Black Holes, Earth. Next, our intelligent AI system called HAL-10000 will ask you several questions, in which you must answer "YES" or "NO". The AI will then read your mind!</p>
+    </div>
+    <button class="btn submit-btn" id="start-button">OK</button>
+    </center>
+</div>
 
 <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
     <div class="game-container">
@@ -38,13 +164,37 @@
                 </div>
                 <button type="submit" class="btn submit-btn">Submit Answer</button>
                 <button type="button" class="btn quit-btn" onclick="confirmQuit(this)">Quit</button>
-                <div id="error-message" style="color:red; display:none;">Please select an answer before submitting!</div>
+                <div id="error-message">Please select an answer before submitting!</div>
             </form>
         {% endif %}
     </div>
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show overlay
+        document.getElementById('overlay').style.display = 'flex';
+
+        const startButton = document.getElementById('start-button');
+        startButton.addEventListener('click', function() {
+            // Hide overlay and show game
+            document.getElementById('overlay').style.display = 'none';
+            document.querySelector('.game-container').style.display = 'block';
+        });
+
+        const radioOptions = document.querySelectorAll('.radio-option');
+        
+        radioOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove 'selected' class from all options
+                radioOptions.forEach(opt => opt.classList.remove('selected'));
+
+                // Add 'selected' class to the clicked option
+                this.classList.add('selected');
+            });
+        });
+    });
+
     function validateForm() {
         var options = document.getElementsByName('answer');
         var isChecked = false;
@@ -78,12 +228,6 @@
         var userConfirmed = confirm("Are you sure you want to quit?");
         if (userConfirmed) {
             window.location.href = "{{ url_for('index') }}";
-        } else {
-            // Reset button styling to the original state if they don't confirm
-            button.style.backgroundColor = '#842f6d';  // Reset background color
-            button.style.color = '#d4a5f5'; // Reset text color
-            button.style.transform = 'scale(1)';
         }
     }
 </script>
-{% endblock %}

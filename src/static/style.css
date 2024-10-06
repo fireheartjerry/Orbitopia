@@ -10,7 +10,7 @@ body {
     width: 100%;
     background-color: black !important;
     z-index: 1 !important;
-    color: white !important;
+    color: #66FCF1 !important;
 }
 
 .content {
@@ -28,13 +28,7 @@ body {
     z-index: 1 !important;
 }
 
-.overlay {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Keep your overlay color */
-    z-index: 1 !important;
-    display: inline-block; /* Dynamically adjust height based on content */
-    padding: 20px; /* Optional: Add padding for spacing */
-}
+
 
 .name {
     position: relative;
@@ -47,6 +41,10 @@ body {
 h1 {
     font-family: "Orbitron", sans-serif;
     font-size: 5em;
+}
+
+h1, h2, h3, h4 {
+    color: #66FCF1 !important;
 }
 
 /* Improved Card Styling */
@@ -85,17 +83,17 @@ h1 {
     border-radius: 15px !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     margin-top: 1em;
-    transition: transform 0.3s ease !important;
-    opacity: 0.6 !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+    opacity: 0.8 !important;
     border: 2px solid white !important;
 }
 
 .card:hover {
     transform: scale(1.02); /* Scale and slight rotation for depth */
     color: white; /* White text on hover */
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 1) !important; /* Enhanced shadow on hover */
     cursor: pointer; /* Pointer cursor on hover */
-    opacity: 0.8 !important;
+    opacity: 1 !important;
 }
 
 
@@ -174,18 +172,18 @@ h1 {
     height: 64px;
     transform: translate(-50%, -50%) rotate(45deg);
     transform-origin: center;
-    animation: rocketFly 3.5s ease-in-out infinite;
+    animation: rocketFly 2.5s ease-in-out infinite;
 }
 
 @keyframes rocketFly {
     0% {
-        transform: translate(-50%, -50%) rotate(45deg) translateY(-5px);
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-8px);
     }
     50% {
-        transform: translate(-50%, -50%) rotate(45deg) translateY(5px);
+        transform: translate(-50%, -50%) rotate(45deg) translateY(8px);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(45deg) translateY(-5px);
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-8px);
     }
 }
 

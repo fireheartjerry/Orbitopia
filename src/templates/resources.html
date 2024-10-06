@@ -1,7 +1,280 @@
 {% extends "layout.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Resources{% endblock %}
 
 {% block main %}
+<div>
+    <div class="stars" style="z-index: 1;"></div>
+    <div class="twinkling" style="z-index: 1;"></div>
+    <div class="clouds" style="z-index: 1;"></div>
+</div>
 
+<section class="resources-container">
+    <div class="intro" style="z-index: 5 !important;">
+        <h1>NASA Resources</h1>
+        <p class="lead">Explore curated NASA resources to expand your knowledge of space exploration, exoplanetary research, and more.</p>
+    </div>
+    
+    <div class="links-grid" style="z-index: 5 !important;">
+        {% for row in links %}
+        <a href="{{ row.link }}" target="_blank" class="resource-card">
+            <div class="card-content">
+                <h2>{{ row.description.title }}</h2>
+                <p>{{ row.description.summary }}</p>
+                <span class="read-more">Learn More &rarr;</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+    /* General Styling */
+    .resources-container {
+        padding: 80px 5%;
+        background: linear-gradient(135deg, #0B0C10 40%, #1F2833);
+        color: #C5C6C7;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    /* Introduction Section */
+    .intro {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative !important;
+        z-index: 5 !important;
+    }
+    
+    .intro h1 {
+        font-size: 4rem;
+        color: #66FCF1;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+        animation: fadeInDown 1s ease-out;
+    }
+    
+    /* Grid Layout */
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+        opacity: 0;
+        position: relative !important;
+        animation: fadeInUp 1.5s ease-out forwards;
+        z-index: 5 !important;
+    }
+    
+    /* Individual Resource Cards */
+    .resource-card {
+        background-color: rgba(31, 40, 51, 0.9);
+        border-radius: 15px;
+        padding: 25px;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        opacity: 0;
+        animation: fadeInUp 1.5s ease-out forwards;
+    }
+    
+    .resource-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, rgba(102, 252, 241, 0.2), transparent 70%);
+        transition: transform 0.7s ease;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+    
+    .resource-card:hover::before {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    
+    .resource-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Card Content */
+    .card-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+        color: #66FCF1;
+        letter-spacing: 1.5px;
+    }
+    
+    .card-content p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        line-height: 1.6;
+        color: #C5C6C7;
+    }
+    
+    /* Read More Link */
+    .read-more {
+        font-size: 1.1rem;
+        color: #45A29E;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    
+    .read-more:hover {
+        color: #66FCF1;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .intro h1 {
+            font-size: 3rem;
+        }
+    
+        .card-content h2 {
+            font-size: 1.8rem;
+        }
+    
+        .card-content p {
+            font-size: 1rem;
+        }
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    header {
+        background-color:rgba(33, 33, 33, 0.9);
+        color:#ffffff;
+        display:block;
+        font: 14px/1.3 Arial,sans-serif;
+        height:50px;
+        position:relative;
+        z-index:5;
+    }
+    h2{
+        margin-top: 30px;
+        text-align: center;
+    }
+    header h2{
+        font-size: 22px;
+        margin: 0 auto;
+        padding: 10px 0;
+        width: 80%;
+        text-align: center;
+    }
+    header a, a:visited {
+        text-decoration:none;
+        color:#fcfcfc;
+    }
+
+    @keyframes move-twink-back {
+        from {background-position:0 0;}
+        to {background-position:-10000px 5000px;}
+    }
+    @-webkit-keyframes move-twink-back {
+        from {background-position:0 0;}
+        to {background-position:-10000px 5000px;}
+    }
+    @-moz-keyframes move-twink-back {
+        from {background-position:0 0;}
+        to {background-position:-10000px 5000px;}
+    }
+    @-ms-keyframes move-twink-back {
+        from {background-position:0 0;}
+        to {background-position:-10000px 5000px;}
+    }
+
+    @keyframes move-clouds-back {
+        from {background-position:0 0;}
+        to {background-position:10000px 0;}
+    }
+    @-webkit-keyframes move-clouds-back {
+        from {background-position:0 0;}
+        to {background-position:10000px 0;}
+    }
+    @-moz-keyframes move-clouds-back {
+        from {background-position:0 0;}
+        to {background-position:10000px 0;}
+    }
+    @-ms-keyframes move-clouds-back {
+        from {background-position: 0;}
+        to {background-position:10000px 0;}
+    }
+
+    .stars, .twinkling, .clouds {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        height:100%;
+        display:block;
+    }
+
+    .stars {
+        background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+        z-index:0;
+        position: fixed;
+    }
+
+    .twinkling{
+        background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+        z-index:1;
+        position: fixed;
+
+        -moz-animation:move-twink-back 200s linear infinite;
+        -ms-animation:move-twink-back 200s linear infinite;
+        -o-animation:move-twink-back 200s linear infinite;
+        -webkit-animation:move-twink-back 200s linear infinite;
+        animation:move-twink-back 200s linear infinite;
+    }
+
+    .clouds{
+        background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+        z-index:3;
+        position: fixed;
+
+        -moz-animation:move-clouds-back 200s linear infinite;
+        -ms-animation:move-clouds-back 200s linear infinite;
+        -o-animation:move-clouds-back 200s linear infinite;
+        -webkit-animation:move-clouds-back 200s linear infinite;
+        animation:move-clouds-back 200s linear infinite;
+    }
+</style>
 {% endblock %}
