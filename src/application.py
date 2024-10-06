@@ -150,6 +150,14 @@ def story6_6():
 def story6_7():
     return render_template('story/6.7.html')
 
+@app.route('/discovery')
+def discovery():
+    return render_template('discovery.html')
+
+@app.route('/resources')
+def resources():
+    return render_template('resources.html')
+
 # Calculate the probabilities for all characters based on given answers
 def calculate_probabilities(questions_so_far, answers_so_far):
     probabilities = []
