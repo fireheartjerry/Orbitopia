@@ -1214,3 +1214,15 @@ KeyError: 'questions_so_far'
 2024-10-06 17:35:29,358 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
 2024-10-06 17:35:37,264 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
 2024-10-06 17:35:37,608 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:35:57,571 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:35:57,971 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:36:07,085 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:36:07,421 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:38:16,729 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:38:17,210 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:38:38,776 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:38:39,177 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:38:59,934 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:39:00,423 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
+2024-10-06 17:39:26,991 DEBUG urllib3.connectionpool MainThread : Starting new HTTPS connection (1): api.nasa.gov:443
+2024-10-06 17:39:27,383 DEBUG urllib3.connectionpool MainThread : https://api.nasa.gov:443 "GET /planetary/apod?api_key=ymdfGVOxRpM9kSqP4TJGM4ETfamnJ5h96AvP45sT HTTP/11" 200 None
